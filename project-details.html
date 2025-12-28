@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Project Details - Data Analyst Portfolio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#3498DB",
+              "background-light": "#F8F9FA",
+              "background-dark": "#111118",
+              "content-light": "#ffffff",
+              "content-dark": "#1a1a2e",
+              "text-light": "#2C3E50",
+              "text-dark": "#e0e0e0",
+              "subtext-light": "#5c6c7d",
+              "subtext-dark": "#9d9db9",
+              "accent": "#1ABC9C"
+            },
+            fontFamily: {
+              "display": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.5rem", "lg": "0.75rem", "xl": "1rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-light dark:text-text-dark">
+<div class="relative flex min-h-screen w-full flex-col">
+<main class="flex-grow">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16">
+<div class="flex flex-col gap-6">
+<!-- Breadcrumbs -->
+<div class="flex flex-wrap gap-2">
+<a class="text-subtext-light dark:text-subtext-dark hover:text-primary dark:hover:text-primary text-base font-medium leading-normal transition-colors" href="#">Portfolio</a>
+<span class="text-subtext-light dark:text-subtext-dark text-base font-medium leading-normal">/</span>
+<span class="text-text-light dark:text-white text-base font-medium leading-normal">Customer Churn Analysis</span>
+</div>
+<!-- Page Heading -->
+<div class="flex flex-wrap items-start justify-between gap-4">
+<div class="flex flex-col gap-3">
+<h1 class="text-text-light dark:text-white text-4xl lg:text-5xl font-black leading-tight tracking-tighter">Predictive Customer Churn Analysis</h1>
+<p class="text-subtext-light dark:text-subtext-dark text-lg font-normal leading-normal max-w-2xl">Utilizing machine learning to proactively identify and retain customers at risk of churning, thereby increasing lifetime value.</p>
+</div>
+</div>
+<!-- Chips/Tags -->
+<div class="flex gap-3 flex-wrap">
+<div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary/10 px-4">
+<p class="text-primary text-sm font-medium leading-normal">Python</p>
+</div>
+<div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary/10 px-4">
+<p class="text-primary text-sm font-medium leading-normal">SQL</p>
+</div>
+<div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary/10 px-4">
+<p class="text-primary text-sm font-medium leading-normal">Tableau</p>
+</div>
+<div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary/10 px-4">
+<p class="text-primary text-sm font-medium leading-normal">Scikit-learn</p>
+</div>
+<div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary/10 px-4">
+<p class="text-primary text-sm font-medium leading-normal">Pandas</p>
+</div>
+</div>
+</div>
+<!-- Two-Column Layout -->
+<div class="mt-12 grid grid-cols-1 lg:grid-cols-3 lg:gap-12">
+<!-- Main Content Column (Left) -->
+<div class="lg:col-span-2 flex flex-col gap-8">
+<!-- Carousel -->
+<div class="flex overflow-hidden">
+<div class="flex w-full items-stretch gap-4">
+<div class="flex h-full flex-1 flex-col gap-4 rounded-lg">
+<div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg flex flex-col shadow-lg" data-alt="A screenshot of a data dashboard showing churn prediction metrics and charts." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAoBT2f9t2rpFLHeEy7ucl1T8TipU6ApZn513htybV7Mg8XkDXUk02KL0rOGx47RZuElTkicLxybRvYwQBGLhoJmeOsrj75QnX8OVMA8Zg7ePi7uAttk3bEqgQQG2WHBrHr77LYqDUsuZrkBJ3ko_qyEjALqo70Djyh_psSavMds2ygC3OUwvG4JRezprdtSScsElBMR0NSm5rVcMGU12MvktWVbKEbTS_060WkGXzQaKgGaupW49XYhKwGxQGSfXclzr5DEEw_HwQz");'></div>
+</div>
+</div>
+</div>
+<!-- Accordions -->
+<div class="flex flex-col rounded-lg bg-content-light dark:bg-content-dark p-2 sm:p-4 shadow-sm">
+<details class="flex flex-col border-b border-gray-200 dark:border-gray-700 py-2 group" open="">
+<summary class="flex cursor-pointer list-none items-center justify-between gap-6 py-2">
+<p class="text-text-light dark:text-white text-lg font-bold leading-normal">Problem Statement</p>
+<div class="text-subtext-light dark:text-subtext-dark group-open:rotate-180 transition-transform">
+<span class="material-symbols-outlined">expand_more</span>
+</div>
+</summary>
+<p class="text-subtext-light dark:text-subtext-dark text-base font-normal leading-relaxed pt-2 pb-2">The company faced a significant increase in customer churn, impacting revenue and growth. The primary objective was to move from a reactive to a proactive retention strategy by developing a predictive model to identify customers at high risk of churning, allowing for targeted intervention.</p>
+</details>
+<details class="flex flex-col border-b border-gray-200 dark:border-gray-700 py-2 group">
+<summary class="flex cursor-pointer list-none items-center justify-between gap-6 py-2">
+<p class="text-text-light dark:text-white text-lg font-bold leading-normal">Methodology</p>
+<div class="text-subtext-light dark:text-subtext-dark group-open:rotate-180 transition-transform">
+<span class="material-symbols-outlined">expand_more</span>
+</div>
+</summary>
+<p class="text-subtext-light dark:text-subtext-dark text-base font-normal leading-relaxed pt-2 pb-2">The project involved data collection from multiple sources, exploratory data analysis to identify key churn indicators, feature engineering, and training several classification models. A Logistic Regression model was chosen for its interpretability and performance, achieving high accuracy in predicting churn within a 30-day window.</p>
+</details>
+<details class="flex flex-col border-b border-gray-200 dark:border-gray-700 py-2 group">
+<summary class="flex cursor-pointer list-none items-center justify-between gap-6 py-2">
+<p class="text-text-light dark:text-white text-lg font-bold leading-normal">Results &amp; Impact</p>
+<div class="text-subtext-light dark:text-subtext-dark group-open:rotate-180 transition-transform">
+<span class="material-symbols-outlined">expand_more</span>
+</div>
+</summary>
+<p class="text-subtext-light dark:text-subtext-dark text-base font-normal leading-relaxed pt-2 pb-2">The predictive model was integrated into the company's CRM, enabling the customer success team to engage with at-risk customers proactively. This led to a 12% reduction in monthly churn within the first quarter of implementation and provided a data-driven framework for future retention strategies.</p>
+</details>
+<details class="flex flex-col py-2 group">
+<summary class="flex cursor-pointer list-none items-center justify-between gap-6 py-2">
+<p class="text-text-light dark:text-white text-lg font-bold leading-normal">Key Learnings</p>
+<div class="text-subtext-light dark:text-subtext-dark group-open:rotate-180 transition-transform">
+<span class="material-symbols-outlined">expand_more</span>
+</div>
+</summary>
+<p class="text-subtext-light dark:text-subtext-dark text-base font-normal leading-relaxed pt-2 pb-2">A key insight was the importance of customer service interaction frequency as a predictor of churn. The project highlighted the value of cross-departmental data integration and established a repeatable MLOps pipeline for future predictive analytics projects.</p>
+</details>
+</div>
+</div>
+<!-- Sidebar Column (Right) -->
+<div class="lg:col-span-1 mt-8 lg:mt-0">
+<div class="sticky top-8 flex flex-col gap-8">
+<div class="rounded-lg bg-content-light dark:bg-content-dark p-6 shadow-sm border border-gray-200 dark:border-gray-700/50">
+<h3 class="text-xl font-bold text-text-light dark:text-white mb-4">Project Highlights</h3>
+<ul class="space-y-4">
+<li class="flex items-center gap-4">
+<span class="material-symbols-outlined text-accent text-3xl">model_training</span>
+<div>
+<p class="font-semibold text-text-light dark:text-white">92% Model Accuracy</p>
+<p class="text-sm text-subtext-light dark:text-subtext-dark">in churn prediction</p>
+</div>
+</li>
+<li class="flex items-center gap-4">
+<span class="material-symbols-outlined text-accent text-3xl">trending_down</span>
+<div>
+<p class="font-semibold text-text-light dark:text-white">12% Churn Reduction</p>
+<p class="text-sm text-subtext-light dark:text-subtext-dark">in the first quarter</p>
+</div>
+</li>
+<li class="flex items-center gap-4">
+<span class="material-symbols-outlined text-accent text-3xl">query_stats</span>
+<div>
+<p class="font-semibold text-text-light dark:text-white">1.2M+ Rows Analyzed</p>
+<p class="text-sm text-subtext-light dark:text-subtext-dark">from customer data</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="rounded-lg bg-content-light dark:bg-content-dark p-6 shadow-sm border border-gray-200 dark:border-gray-700/50">
+<h3 class="text-xl font-bold text-text-light dark:text-white mb-4">Resources</h3>
+<div class="flex flex-col gap-3">
+<a class="flex w-full items-center justify-center rounded-lg h-12 px-6 bg-primary text-white text-base font-bold leading-normal tracking-wide transition-transform hover:scale-105" href="#">
+<span class="material-symbols-outlined mr-2">open_in_new</span>
+<span>Live Demo</span>
+</a>
+<a class="flex w-full items-center justify-center rounded-lg h-12 px-6 bg-gray-200 dark:bg-gray-700 text-text-light dark:text-white text-base font-bold leading-normal tracking-wide transition-colors hover:bg-gray-300 dark:hover:bg-gray-600" href="#">
+<span class="material-symbols-outlined mr-2">code</span>
+<span>GitHub Repo</span>
+</a>
+<a class="flex w-full items-center justify-center rounded-lg h-12 px-6 bg-gray-200 dark:bg-gray-700 text-text-light dark:text-white text-base font-bold leading-normal tracking-wide transition-colors hover:bg-gray-300 dark:hover:bg-gray-600" href="#">
+<span class="material-symbols-outlined mr-2">description</span>
+<span>Full Report</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Navigation -->
+<div class="mt-16 pt-8 border-t border-gray-200 dark:border-gray-700 flex justify-between items-center">
+<a class="flex items-center gap-2 text-subtext-light dark:text-subtext-dark hover:text-primary dark:hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">arrow_back</span>
+<span class="font-semibold">Previous Project</span>
+</a>
+<a class="flex items-center gap-2 text-subtext-light dark:text-subtext-dark hover:text-primary dark:hover:text-primary transition-colors" href="#">
+<span class="font-semibold">Next Project</span>
+<span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+</div>
+</main>
+</div>
+</body></html>

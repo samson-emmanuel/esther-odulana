@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Data Analyst Portfolio - Blog</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#1313ec",
+            "background-light": "#f6f6f8",
+            "background-dark": "#101022",
+          },
+          fontFamily: {
+            "display": ["Inter"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+    }
+  </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="relative flex min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<!-- TopNavBar -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-white/10 dark:border-white/10 px-4 sm:px-10 lg:px-20 py-3 bg-background-light dark:bg-background-dark/80 backdrop-blur-sm sticky top-0 z-50">
+<div class="flex items-center gap-4 text-slate-900 dark:text-white">
+<div class="size-6 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_6_330)">
+<path clip-rule="evenodd" d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor" fill-rule="evenodd"></path>
+</g>
+<defs>
+<clippath id="clip0_6_330">
+<rect fill="white" height="48" width="48"></rect>
+</clippath>
+</defs>
+</svg>
+</div>
+<h2 class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">Data Analyst Portfolio</h2>
+</div>
+<div class="hidden md:flex flex-1 justify-end items-center gap-8">
+<nav class="flex items-center gap-9">
+<a class="text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary text-sm font-medium leading-normal" href="#">Home</a>
+<a class="text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary text-sm font-medium leading-normal" href="#">Projects</a>
+<a class="text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary text-sm font-medium leading-normal" href="#">About</a>
+<a class="text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary text-sm font-medium leading-normal" href="#">Contact</a>
+<a class="text-primary dark:text-primary text-sm font-bold leading-normal" href="#">Blog</a>
+</nav>
+<div class="flex gap-2">
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em]">
+<span class="truncate">Get In Touch</span>
+</button>
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 bg-slate-200 dark:bg-white/10 text-slate-900 dark:text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5">
+<span class="material-symbols-outlined text-xl">
+                auto_awesome
+              </span>
+</button>
+</div>
+</div>
+<button class="md:hidden flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 bg-slate-200 dark:bg-white/10 text-slate-900 dark:text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5">
+<span class="material-symbols-outlined text-2xl">menu</span>
+</button>
+</header>
+<main class="px-4 sm:px-6 lg:px-8 py-10 lg:py-16">
+<div class="max-w-7xl mx-auto">
+<!-- PageHeading -->
+<div class="flex flex-wrap justify-between gap-6 p-4">
+<div class="flex min-w-72 flex-col gap-3">
+<p class="text-slate-900 dark:text-white text-4xl lg:text-5xl font-black leading-tight tracking-[-0.033em]">Data Insights &amp; Analysis</p>
+<p class="text-slate-500 dark:text-slate-400 text-base lg:text-lg font-normal leading-normal">Exploring trends, tutorials, and thoughts from the world of data.</p>
+</div>
+</div>
+<!-- SearchBar and Chips -->
+<div class="flex flex-col md:flex-row gap-4 px-4 py-6 border-b border-slate-200 dark:border-white/10">
+<div class="flex-1">
+<label class="flex flex-col min-w-40 h-12 w-full">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+<div class="text-slate-400 dark:text-slate-500 flex bg-slate-200 dark:bg-white/5 items-center justify-center pl-4 rounded-l-lg">
+<span class="material-symbols-outlined text-2xl">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-r-lg text-slate-900 dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border-none bg-slate-200 dark:bg-white/5 h-full placeholder:text-slate-500 dark:placeholder:text-slate-500 px-4 pl-2 text-base font-normal leading-normal" placeholder="Search articles by keyword" value=""/>
+</div>
+</label>
+</div>
+<div class="flex gap-2 p-1 overflow-x-auto">
+<div class="flex h-10 cursor-pointer shrink-0 items-center justify-center gap-x-2 rounded-lg bg-primary/20 dark:bg-primary/20 px-4">
+<p class="text-primary text-sm font-medium leading-normal">All</p>
+</div>
+<div class="flex h-10 cursor-pointer shrink-0 items-center justify-center gap-x-2 rounded-lg bg-slate-200 dark:bg-white/5 px-4">
+<p class="text-slate-700 dark:text-slate-300 text-sm font-medium leading-normal">Python</p>
+</div>
+<div class="flex h-10 cursor-pointer shrink-0 items-center justify-center gap-x-2 rounded-lg bg-slate-200 dark:bg-white/5 px-4">
+<p class="text-slate-700 dark:text-slate-300 text-sm font-medium leading-normal">SQL</p>
+</div>
+<div class="flex h-10 cursor-pointer shrink-0 items-center justify-center gap-x-2 rounded-lg bg-slate-200 dark:bg-white/5 px-4">
+<p class="text-slate-700 dark:text-slate-300 text-sm font-medium leading-normal">Machine Learning</p>
+</div>
+<div class="flex h-10 cursor-pointer shrink-0 items-center justify-center gap-x-2 rounded-lg bg-slate-200 dark:bg-white/5 px-4">
+<p class="text-slate-700 dark:text-slate-300 text-sm font-medium leading-normal">Visualization</p>
+</div>
+<div class="flex h-10 cursor-pointer shrink-0 items-center justify-center gap-x-2 rounded-lg bg-slate-200 dark:bg-white/5 px-4">
+<p class="text-slate-700 dark:text-slate-300 text-sm font-medium leading-normal">Statistics</p>
+</div>
+</div>
+</div>
+<!-- Main Content Grid -->
+<div class="mt-8 lg:mt-12 grid grid-cols-12 gap-8">
+<!-- Articles Section -->
+<div class="col-span-12 lg:col-span-8">
+<div class="flex flex-col gap-8">
+<!-- Card 1 -->
+<div class="p-4">
+<div class="flex flex-col md:flex-row items-stretch justify-between gap-6 rounded-lg">
+<div class="flex flex-col gap-4 order-2 md:order-1 flex-[2_2_0px]">
+<div class="flex flex-col gap-2">
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-normal">Data Visualization • 8 min read</p>
+<p class="text-slate-900 dark:text-white text-xl font-bold leading-tight">Mastering Matplotlib for Advanced Visualizations</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-normal">
+                          A deep dive into creating publication-quality charts and graphs using Python's most popular plotting library.
+                        </p>
+</div>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-8 px-4 flex-row-reverse bg-slate-200 dark:bg-white/5 text-slate-800 dark:text-slate-200 text-sm font-medium leading-normal w-fit">
+<span class="truncate">Read More</span>
+</button>
+</div>
+<div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg flex-1 order-1 md:order-2" data-alt="Abstract visualization of colorful data points on a dark background." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCwPeKujOh248x-fTkeve-XW0ROD1JxneUNCkLRVJ01rtO9PcmM7GaJzKVefewqsGUQ1GBen8RbxOlq5xTv9yupcSA3ozAqtPqs4XVGBpQaMHX-9U0SBlGNTm1RAWzlDz9pkhHbXPetc-wQHZn0JYOHeVDjagdOMh17eWEQe-tKfylychngdkeq-xkLcSsYOYqaSAq0Xc6zXUZtJO_5ORAzJed6oh7k-ZiT-iuK6NrlGLCHxprf9OvLsAzUNR6qPXZzUZfiNT6zLGwm");'></div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="p-4">
+<div class="flex flex-col md:flex-row items-stretch justify-between gap-6 rounded-lg">
+<div class="flex flex-col gap-4 order-2 md:order-1 flex-[2_2_0px]">
+<div class="flex flex-col gap-2">
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-normal">SQL • 12 min read</p>
+<p class="text-slate-900 dark:text-white text-xl font-bold leading-tight">Advanced SQL Window Functions for Analysts</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-normal">
+                          Unlock powerful analytical capabilities by mastering window functions like RANK(), DENSE_RANK(), and NTILE() for complex cohort analysis.
+                        </p>
+</div>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-8 px-4 flex-row-reverse bg-slate-200 dark:bg-white/5 text-slate-800 dark:text-slate-200 text-sm font-medium leading-normal w-fit">
+<span class="truncate">Read More</span>
+</button>
+</div>
+<div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg flex-1 order-1 md:order-2" data-alt="Image of a database server room with glowing lights." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDIMVBbLc9aj9bBtbX3Gs85GP54EiuRM-DDbC9T1ls42KE_jD_txmWwdgZOryfw3vEqgsQCj7jCrZMXpM1jemGxN1txm3mduGMx2di_8WyXsoFTPrBrbG9PocLCoIyWckYeoul0ansUS7dx8HZdClAgzfxqKpJi_4A43bD05CKyLk46M-H9ghYKWiMRB-7Y1Ytxw3vxZCz_3iHn0sYKZn5LZUdGJraZF7UWLoNTppMnXQkbDeIgnUq3JybYBCUM03IGVuTskujCwzzQ");'></div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="p-4">
+<div class="flex flex-col md:flex-row items-stretch justify-between gap-6 rounded-lg">
+<div class="flex flex-col gap-4 order-2 md:order-1 flex-[2_2_0px]">
+<div class="flex flex-col gap-2">
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-normal">Machine Learning • 15 min read</p>
+<p class="text-slate-900 dark:text-white text-xl font-bold leading-tight">A Practical Guide to A/B Testing</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-normal">
+                          Learn the statistical principles behind A/B testing and how to design, run, and interpret experiments to make data-driven decisions.
+                        </p>
+</div>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-8 px-4 flex-row-reverse bg-slate-200 dark:bg-white/5 text-slate-800 dark:text-slate-200 text-sm font-medium leading-normal w-fit">
+<span class="truncate">Read More</span>
+</button>
+</div>
+<div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg flex-1 order-1 md:order-2" data-alt="Split diagram showing two different user interface versions for A/B testing." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDqtv6o03eOGzXRaZWRBse4eHQwj0PCInP7RDfI8L3GOkhFFI0Ps6o-j7ZTQeBRWnMGEmfNCnuUcV0jnPNat8Et5j9Zxko9fkrM7J62n491Z8sZfP4nSlah0CXXNkbOjH2jOgbveEOgzZFlV8BD8WnjWYBj5llJ5ZxOy1Hpss5lmWah_A22XN3QwhevTuGLlNa_d8YdwVcN6iKv4AwucKJ803X_h4p8ZUUUgvAQ16RFhXK40QDHoQTngVrYdChk6AA2J4cnG4NcPrJi");'></div>
+</div>
+</div>
+</div>
+<!-- Pagination -->
+<div class="flex items-center justify-center gap-2 mt-12 p-4">
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-slate-200 dark:bg-white/5 text-slate-500 dark:text-slate-400">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-primary text-white">1</button>
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-slate-200 dark:bg-white/5 text-slate-500 dark:text-slate-400">2</button>
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-slate-200 dark:bg-white/5 text-slate-500 dark:text-slate-400">3</button>
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-slate-200 dark:bg-white/5 text-slate-500 dark:text-slate-400">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Sidebar -->
+<aside class="col-span-12 lg:col-span-4 space-y-8 p-4">
+<div class="bg-slate-100 dark:bg-white/5 p-6 rounded-xl">
+<h3 class="text-slate-900 dark:text-white text-lg font-bold mb-4">Featured Posts</h3>
+<ul class="space-y-4">
+<li><a class="font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary text-sm" href="#">Understanding Confidence Intervals</a></li>
+<li><a class="font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary text-sm" href="#">Cleaning Messy Data with Pandas</a></li>
+<li><a class="font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary text-sm" href="#">Introduction to Logistic Regression</a></li>
+</ul>
+</div>
+<div class="bg-slate-100 dark:bg-white/5 p-6 rounded-xl">
+<h3 class="text-slate-900 dark:text-white text-lg font-bold mb-4">Categories</h3>
+<ul class="space-y-3">
+<li><a class="flex justify-between items-center font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary text-sm" href="#"><span>Python</span><span class="text-xs text-slate-400 dark:text-slate-500">8</span></a></li>
+<li><a class="flex justify-between items-center font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary text-sm" href="#"><span>SQL</span><span class="text-xs text-slate-400 dark:text-slate-500">5</span></a></li>
+<li><a class="flex justify-between items-center font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary text-sm" href="#"><span>Machine Learning</span><span class="text-xs text-slate-400 dark:text-slate-500">4</span></a></li>
+<li><a class="flex justify-between items-center font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary text-sm" href="#"><span>Data Visualization</span><span class="text-xs text-slate-400 dark:text-slate-500">6</span></a></li>
+<li><a class="flex justify-between items-center font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary text-sm" href="#"><span>Statistics</span><span class="text-xs text-slate-400 dark:text-slate-500">7</span></a></li>
+</ul>
+</div>
+<div class="bg-slate-100 dark:bg-white/5 p-6 rounded-xl">
+<h3 class="text-slate-900 dark:text-white text-lg font-bold mb-4">Archives</h3>
+<ul class="space-y-3">
+<li><a class="font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary text-sm" href="#">October 2023</a></li>
+<li><a class="font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary text-sm" href="#">September 2023</a></li>
+<li><a class="font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary text-sm" href="#">August 2023</a></li>
+</ul>
+</div>
+</aside>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-100 dark:bg-background-dark/50 border-t border-slate-200 dark:border-white/10 mt-16">
+<div class="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+<p class="text-sm text-slate-500 dark:text-slate-400">© 2023 Data Analyst Portfolio. All rights reserved.</p>
+<div class="flex gap-4">
+<a class="text-slate-500 dark:text-slate-400 hover:text-primary dark:hover:text-primary" href="#">
+<span class="material-symbols-outlined">mail</span>
+</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-primary dark:hover:text-primary" href="#">
+<span class="material-symbols-outlined">code</span>
+</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-primary dark:hover:text-primary" href="#">
+<span class="material-symbols-outlined">group</span>
+</a>
+</div>
+</div>
+</footer>
+</div>
+</div>
+</body></html>

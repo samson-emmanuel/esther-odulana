@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>John Doe | Professional Journey</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1313ec",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#111118",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+<div class="flex h-full grow flex-col">
+<!-- TopNavBar -->
+<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-white/10 bg-background-dark/80 px-4 py-3 backdrop-blur-sm sm:px-10 md:px-20 lg:px-40">
+<div class="flex items-center gap-4 text-white">
+<div class="size-6 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M24 18.4228L42 11.475V34.3663C42 34.7796 41.7457 35.1504 41.3601 35.2992L24 42V18.4228Z" fill="currentColor" fill-rule="evenodd"></path>
+<path clip-rule="evenodd" d="M24 8.18819L33.4123 11.574L24 15.2071L14.5877 11.574L24 8.18819ZM9 15.8487L21 20.4805V37.6263L9 32.9945V15.8487ZM27 37.6263V20.4805L39 15.8487V32.9945L27 37.6263ZM25.354 2.29885C24.4788 1.98402 23.5212 1.98402 22.646 2.29885L4.98454 8.65208C3.7939 9.08038 3 10.2097 3 11.475V34.3663C3 36.0196 4.01719 37.5026 5.55962 38.098L22.9197 44.7987C23.6149 45.0671 24.3851 45.0671 25.0803 44.7987L42.4404 38.098C43.9828 37.5026 45 36.0196 45 34.3663V11.475C45 10.2097 44.2061 9.08038 43.0155 8.65208L25.354 2.29885Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="hidden text-white sm:block text-lg font-bold leading-tight tracking-[-0.015em]">John Doe</h2>
+</div>
+<div class="flex items-center justify-end gap-4 sm:gap-8">
+<nav class="hidden items-center gap-6 md:flex">
+<a class="text-white/70 hover:text-white text-sm font-medium leading-normal transition-colors" href="#">Home</a>
+<a class="text-primary text-sm font-bold leading-normal" href="#">Journey</a>
+<a class="text-white/70 hover:text-white text-sm font-medium leading-normal transition-colors" href="#">Projects</a>
+<a class="text-white/70 hover:text-white text-sm font-medium leading-normal transition-colors" href="#">Contact</a>
+</nav>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-opacity">
+<span class="truncate">Get In Touch</span>
+</button>
+</div>
+</header>
+<main class="flex flex-1 justify-center p-4 sm:p-6 md:p-10 lg:px-40 lg:py-12">
+<div class="flex max-w-[960px] flex-1 flex-col gap-10">
+<!-- ProfileHeader -->
+<section class="flex flex-col items-center gap-4 text-center md:flex-row md:text-left">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full min-h-32 w-32" data-alt="Professional headshot of John Doe" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuACUTnVu_2zb6MdQ23yXssyVDp17yR_zgxieiOEjqd-vogCv-J8vD8vYSu05yXYFYO34VwHIYAKKAqoT2uHkVg7Bicr1_Ye9PkG3beCATntFi32l89ePHB4Igsn9TFPFYADzJ_kHxu5C8jn6HsGG61TPxyZPgSdU_ZuXCXIj-Rq-krIQz8ZKUB91ptEjSa80Jh7ZkpNhG8EskjY38OWLYZJCP5mD0jzkcOT8lf3FViDI4bJwYGD17dVam5_-5astBaZRANwvJDfhUoJ");'></div>
+<div class="flex flex-col justify-center">
+<h1 class="text-slate-800 dark:text-white text-3xl font-bold leading-tight tracking-tighter">John Doe</h1>
+<p class="text-slate-500 dark:text-slate-400 text-lg font-normal leading-normal">Senior Data Analyst &amp; BI Specialist</p>
+</div>
+</section>
+<!-- About Me Section -->
+<section>
+<h2 class="text-slate-800 dark:text-white text-2xl font-bold leading-tight tracking-tight px-4 pb-3 pt-5">About Me</h2>
+<p class="text-slate-600 dark:text-slate-300 text-base font-normal leading-relaxed pb-3 pt-1 px-4">
+                            A brief, compelling summary of my professional identity, core expertise in data analysis and business intelligence, and my career aspirations to leverage data for impactful business solutions. I thrive on transforming complex datasets into actionable insights that drive strategic decision-making.
+                        </p>
+</section>
+<!-- Professional Journey Timeline -->
+<section>
+<h2 class="text-slate-800 dark:text-white text-2xl font-bold leading-tight tracking-tight px-4 pb-6 pt-5">Professional Journey</h2>
+<div class="relative pl-8">
+<!-- Timeline Line -->
+<div class="absolute left-10 top-2 h-full w-0.5 bg-slate-200 dark:bg-slate-700"></div>
+<!-- Timeline Item: Work Experience 1 -->
+<div class="relative mb-12">
+<div class="absolute left-[-8px] top-1.5 flex h-6 w-6 items-center justify-center rounded-full bg-primary ring-8 ring-background-light dark:ring-background-dark">
+<span class="material-symbols-outlined text-white text-base">work</span>
+</div>
+<div class="ml-8">
+<h3 class="text-slate-800 dark:text-white text-lg font-bold">Senior Data Analyst</h3>
+<p class="text-primary text-sm font-medium">DataCorp Inc. | 2020 - Present</p>
+<ul class="mt-2 list-disc pl-5 text-slate-600 dark:text-slate-300 text-sm space-y-1">
+<li>Led a team to develop a predictive model that improved sales forecasting accuracy by 25%.</li>
+<li>Designed and maintained BI dashboards in Tableau, providing key stakeholders with real-time business insights.</li>
+<li>Automated data extraction and cleaning processes using Python and SQL, reducing manual effort by 40 hours/week.</li>
+</ul>
+</div>
+</div>
+<!-- Timeline Item: Work Experience 2 -->
+<div class="relative mb-12">
+<div class="absolute left-[-8px] top-1.5 flex h-6 w-6 items-center justify-center rounded-full bg-primary ring-8 ring-background-light dark:ring-background-dark">
+<span class="material-symbols-outlined text-white text-base">work</span>
+</div>
+<div class="ml-8">
+<h3 class="text-slate-800 dark:text-white text-lg font-bold">Data Analyst</h3>
+<p class="text-primary text-sm font-medium">Analytics Solutions | 2018 - 2020</p>
+<ul class="mt-2 list-disc pl-5 text-slate-600 dark:text-slate-300 text-sm space-y-1">
+<li>Analyzed customer behavior data to identify trends, contributing to a 15% increase in user retention.</li>
+<li>Created comprehensive reports and visualizations to communicate findings to non-technical audiences.</li>
+</ul>
+</div>
+</div>
+<!-- Timeline Item: Education -->
+<div class="relative mb-12">
+<div class="absolute left-[-8px] top-1.5 flex h-6 w-6 items-center justify-center rounded-full bg-slate-500 ring-8 ring-background-light dark:ring-background-dark">
+<span class="material-symbols-outlined text-white text-base">school</span>
+</div>
+<div class="ml-8">
+<h3 class="text-slate-800 dark:text-white text-lg font-bold">M.S. in Data Science</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">State University | 2016 - 2018</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Skills Section -->
+<section>
+<h2 class="text-slate-800 dark:text-white text-2xl font-bold leading-tight tracking-tight px-4 pb-6 pt-5">Technical Skills</h2>
+<div class="grid grid-cols-2 gap-4 px-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+<div class="flex flex-col items-center gap-2 rounded-lg bg-slate-100 dark:bg-slate-800/50 p-4 transition-transform hover:scale-105">
+<img alt="Python logo" class="h-10 w-10" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7zUvDqxbp_zFfWHsJz3ZYkSjvXzVxt8TNLpjJ-tq1whyzwJBfy5KsOXDXIJamiq2hav_K3Mi68E1tCOZuy0ceKUBt-XZK7Z4GeYv2xlXnrvNo3uw0hVGRmRUn4dTGJz-cLQufeFmbjv_eeAf1cJpGs5rL00PQ11Zg7E3dyqQrgGl9yhLnsobw-3972mUEq44R2vLgxBRowcoi_6EjV4DgSH5OVucyq6lAR-gIt5sSB-HfbPXwxCQRGe63OBPlBBq5OubXUx_qLiot"/>
+<p class="text-slate-700 dark:text-slate-300 text-sm font-medium">Python</p>
+</div>
+<div class="flex flex-col items-center gap-2 rounded-lg bg-slate-100 dark:bg-slate-800/50 p-4 transition-transform hover:scale-105">
+<img alt="SQL logo" class="h-10 w-10" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKmly8K3JHeFc5BnObLnHtZx4zJONwKT4SGxe_qx0ET27QrnXhCiJLLN7nTj3d6fNrnc5sHxBVQ6Ihnj3d-dyihaMtTtcYur6NDypIItqt7PTSD9suGgJZRxtSLeOSGQrtSLvCKWAjVXe-MjYrXer6etmZFXbIZiTYs59d03qTzHsD8yiWeTpDlpmebGtlHNFjira3Vfx1QMYJ7njRjsrMhlVDAQWM9oZW3RQ75PEUodW7JFLYMhbb3kRYmcc_Tv7kkxl855ieGxxD"/>
+<p class="text-slate-700 dark:text-slate-300 text-sm font-medium">SQL</p>
+</div>
+<div class="flex flex-col items-center gap-2 rounded-lg bg-slate-100 dark:bg-slate-800/50 p-4 transition-transform hover:scale-105">
+<img alt="Tableau logo" class="h-10 w-10" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAE-FKsdIiOZqkKiDuJsmmzVQzhEM5885M3OI9ZBvoiAyA-iO8KE9_t54H6QZy7x3yMa0uj5NtiVlZOoavNft3I4tX1B7gQniPNoRGEl3nG1rcKOSmhgLH-Ve6ku-LJ7cbshiZLkh3eIiVpFcIlnAj0KiD4V1GZTncMuC_bMLRD-JBxM0JE99rsFMyLEHMIVyfB6yTV9v-2BJqFz9gLCeNhAgntz3wo1kG6gVyxE3GFpDpxIXEjyMbLDk0757FElO4llyQs4a8LE5Y"/>
+<p class="text-slate-700 dark:text-slate-300 text-sm font-medium">Tableau</p>
+</div>
+<div class="flex flex-col items-center gap-2 rounded-lg bg-slate-100 dark:bg-slate-800/50 p-4 transition-transform hover:scale-105">
+<img alt="Power BI logo" class="h-10 w-10" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2nPXjYyYMXHf0HrrE_nkQIpQM_HW4K3FAg30u2EQ73xSk2cOQMmhpS7U0YDXKHsIAn24lOcgsSuSHSWUkHQOQivo6n15pffSfP8z5HnDNeeifiWKpC8St_3kJUUiZgsJAvusvCTrfo_QjQdHnuaua3FHOMULmgDWdJwatoBN3EVPNVNnGoXcfXYdq77WIyWL5ZHoBpHDgPgbEFflPbzQ_pByprwbj8ZjZhC3fBA-FjnPm6Guj1FDC5eoeUjd-G2Z0XUgg_QUApFKa"/>
+<p class="text-slate-700 dark:text-slate-300 text-sm font-medium">Power BI</p>
+</div>
+<div class="flex flex-col items-center gap-2 rounded-lg bg-slate-100 dark:bg-slate-800/50 p-4 transition-transform hover:scale-105">
+<img alt="Pandas logo" class="h-10 w-10" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYLbEji0PilCPcP-PGlAGQy4G47K7JZkv-4ZF9PrSXOoKXY3TVZmURJHlQQiE8ScqTp_TNf5NsVhNfanX9T3IVNB0AyksnEBm9xp9sGqE7qHrE5fpZeUYOgpBRiH8WyXoaCMtQ7QU_-7vR3gU1t4NkBFxU4f3nWJmm4PabV_TM2p7g5AgXxSvJqFMx8Y1SxM5R0hkyJ0E4iMRIyiHj1_5fHsaNT0xL70h0ZGd9s_p7dduTqpVB1Brmj_h2uVSAtDrjg06k5O8MMaUl"/>
+<p class="text-slate-700 dark:text-slate-300 text-sm font-medium">Pandas</p>
+</div>
+</div>
+</section>
+<!-- Certifications & Interests -->
+<div class="grid grid-cols-1 gap-10 pt-5 md:grid-cols-2">
+<section>
+<h2 class="text-slate-800 dark:text-white text-2xl font-bold leading-tight tracking-tight px-4 pb-6">Certifications</h2>
+<div class="space-y-4 px-4">
+<div class="flex items-center gap-4 rounded-lg bg-slate-100 dark:bg-slate-800/50 p-4">
+<span class="material-symbols-outlined text-primary text-2xl">verified</span>
+<p class="text-slate-700 dark:text-slate-300 font-medium">Certified Data Analyst Professional</p>
+</div>
+<div class="flex items-center gap-4 rounded-lg bg-slate-100 dark:bg-slate-800/50 p-4">
+<span class="material-symbols-outlined text-primary text-2xl">verified</span>
+<p class="text-slate-700 dark:text-slate-300 font-medium">Tableau Desktop Specialist</p>
+</div>
+</div>
+</section>
+<section>
+<h2 class="text-slate-800 dark:text-white text-2xl font-bold leading-tight tracking-tight px-4 pb-6">Personal Interests</h2>
+<div class="flex flex-wrap gap-4 px-4">
+<div class="flex items-center gap-2 rounded-full bg-slate-100 dark:bg-slate-800/50 px-4 py-2">
+<span class="material-symbols-outlined text-slate-500 dark:text-slate-400">hiking</span>
+<span class="text-slate-700 dark:text-slate-300 text-sm font-medium">Hiking</span>
+</div>
+<div class="flex items-center gap-2 rounded-full bg-slate-100 dark:bg-slate-800/50 px-4 py-2">
+<span class="material-symbols-outlined text-slate-500 dark:text-slate-400">photo_camera</span>
+<span class="text-slate-700 dark:text-slate-300 text-sm font-medium">Photography</span>
+</div>
+<div class="flex items-center gap-2 rounded-full bg-slate-100 dark:bg-slate-800/50 px-4 py-2">
+<span class="material-symbols-outlined text-slate-500 dark:text-slate-400">chess</span>
+<span class="text-slate-700 dark:text-slate-300 text-sm font-medium">Chess</span>
+</div>
+</div>
+</section>
+</div>
+<!-- CTA Section -->
+<section class="flex flex-col items-center justify-center gap-4 rounded-xl bg-slate-100 dark:bg-slate-800/50 p-8 my-10 text-center">
+<h2 class="text-slate-800 dark:text-white text-2xl font-bold leading-tight tracking-tight">Ready to collaborate?</h2>
+<p class="text-slate-600 dark:text-slate-300 max-w-md">Let's connect and discuss how my data expertise can help your business achieve its goals.</p>
+<button class="mt-2 flex min-w-[150px] cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-lg h-12 px-6 bg-primary text-white text-base font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined">download</span>
+<span class="truncate">Download Resume</span>
+</button>
+</section>
+</div>
+</main>
+</div>
+</div>
+</body></html>
