@@ -13,7 +13,7 @@
         theme: {
           extend: {
             colors: {
-              "primary": "#6366f1",
+              "primary": "#1b9dab",
               "background-light": "#f6f6f8",
               "background-dark": "#111118",
               "surface-dark": "#1c1c27",
@@ -41,8 +41,8 @@
 <div class="hidden md:flex flex-1 justify-end gap-8">
 <nav class="flex items-center gap-9">
     <a class="text-slate-600 dark:text-white text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary" href="index.html">Home</a>
-    <a class="text-slate-600 dark:text-white text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary" href="about-me.html">About Me</a>
-    <a class="text-slate-600 dark:text-white text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary" href="contact.html">Contact</a>
+    <!-- <a class="text-slate-600 dark:text-white text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary" href="about-me.html">About Me</a>
+    <a class="text-slate-600 dark:text-white text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary" href="contact.html">Contact</a> -->
 </nav>
 </div>
 </header>
@@ -126,7 +126,7 @@
 </div>
 <div class="mt-auto p-4 bg-primary/10 rounded-lg">
     <p class="text-sm font-bold text-primary mb-1">Key Trend</p>
-    <p class="text-xs text-slate-600 dark:text-slate-300">Sales data (2016-2021) shows consistent high demand in <strong>February</strong>, indicating recurring seasonality.</p>
+    <p class="text-xs text-slate-600 dark:text-slate-300">Sales data shows consistent high demand in <strong>February</strong>, indicating recurring seasonality.</p>
 </div>
 </div>
 </div>
@@ -149,7 +149,7 @@
 <div class="rounded-xl bg-white dark:bg-slate-800/60 p-6 border border-slate-200 dark:border-slate-800">
 <h3 class="font-bold text-primary mb-3 flex items-center gap-2"><span class="material-symbols-outlined">public</span> Geographic Performance</h3>
 <ul class="text-sm text-slate-600 dark:text-slate-300 space-y-3">
-    <li><strong>Top Country:</strong> United Kingdom</li>
+    <li><strong>Top Country:</strong> United State</li>
     <li><strong>Total Orders:</strong> 11,153</li>
     <li><strong>Total Revenue:</strong> $23,764,426</li>
 </ul>
@@ -167,7 +167,7 @@
 <section class="py-6">
 <div class="rounded-xl bg-white dark:bg-slate-800/60 p-8 border border-slate-200 dark:border-slate-800">
 <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-6">Technical Approach</h2>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
 <div>
     <h3 class="font-bold dark:text-white mb-3 text-sm uppercase tracking-wider opacity-60">ETL & Modeling</h3>
     <ul class="text-sm text-slate-600 dark:text-slate-300 space-y-2 list-disc list-inside">
@@ -185,6 +185,10 @@
         <li><strong>DAX Measure (Revenue):</strong> Calculated as <code>Quantity Sold × Unit Price</code>.</li>
         <li>Applied interactive filters and slicers for country-level drill-downs.</li>
     </ul>
+</div>
+<div class="flex flex-col gap-3">
+    <h3 class="font-bold dark:text-white mb-3 text-sm uppercase tracking-wider opacity-60">Data Relationships</h3>
+    <img class="w-full h-auto rounded-lg shadow-sm border border-slate-200 dark:border-slate-800" alt="One to Many Data Connection" src="images/One%20to%20Many%20Data%20Connection.png"/>
 </div>
 </div>
 </div>
