@@ -1,206 +1,298 @@
 <!DOCTYPE html>
-
-<html class="dark" lang="en"><head>
+<html class="dark" lang="en">
+<head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Terry Gerry | Electronic Sales Analysis</title>
+<title>Electronic Sales Analysis | Esther Odulana</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
 <script id="tailwind-config">
-      tailwind.config = {
+    tailwind.config = {
         darkMode: "class",
         theme: {
-          extend: {
-            colors: {
-              "primary": "#1b9dab",
-              "background-light": "#f6f6f8",
-              "background-dark": "#111118",
-              "surface-dark": "#1c1c27",
+            extend: {
+                colors: {
+                    "primary": "#e8a424",
+                    "primary-dark": "#c98810",
+                    "background-dark": "#07070f",
+                    "surface-dark": "#0d0d1c",
+                    "surface-2-dark": "#131326",
+                    "background-light": "#f8fafc",
+                },
+                fontFamily: { "display": ["Inter", "sans-serif"] },
             },
-            fontFamily: {
-              "display": ["Inter", "sans-serif"]
-            },
-            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
-          },
         },
-      }
-    </script>
+    }
+</script>
+<style>
+    .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    .gradient-text {
+        background: linear-gradient(135deg, #fdf8ef 0%, #fde68a 50%, #e8a424 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+    .card-hover { transition: transform 0.25s ease, border-color 0.25s ease; }
+    .card-hover:hover { transform: translateY(-3px); }
+</style>
 </head>
-<body class="font-display bg-background-light dark:bg-background-dark">
-<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-white/10 dark:border-b-[#282839] px-4 sm:px-10 py-3 sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm">
-<div class="flex items-center gap-4 text-slate-900 dark:text-white">
-<div class="size-6 text-primary">
-<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-<path clip-rule="evenodd" d="M24 18.4228L42 11.475V34.3663C42 34.7796 41.7457 35.1504 41.3601 35.2992L24 42V18.4228Z" fill="currentColor" fill-rule="evenodd"></path>
-<path clip-rule="evenodd" d="M24 8.18819L33.4123 11.574L24 15.2071L14.5877 11.574L24 8.18819ZM9 15.8487L21 20.4805V37.6263L9 32.9945V15.8487ZM27 37.6263V20.4805L39 15.8487V32.9945L27 37.6263ZM25.354 2.29885C24.4788 1.98402 23.5212 1.98402 22.646 2.29885L4.98454 8.65208C3.7939 9.08038 3 10.2097 3 11.475V34.3663C3 36.0196 4.01719 37.5026 5.55962 38.098L22.9197 44.7987C23.6149 45.0671 24.3851 45.0671 25.0803 44.7987L42.4404 38.098C43.9828 37.5026 45 36.0196 45 34.3663V11.475C45 10.2097 44.2061 9.08038 43.0155 8.65208L25.354 2.29885Z" fill="currentColor" fill-rule="evenodd"></path>
-</svg>
-</div>
-<h2 class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">Esther Odulana | Data Analyst</h2>
-</div>
-<div class="hidden md:flex flex-1 justify-end gap-8">
-<nav class="flex items-center gap-9">
-    <a class="text-slate-600 dark:text-white text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary" href="index.html">Home</a>
-    <!-- <a class="text-slate-600 dark:text-white text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary" href="about-me.html">About Me</a>
-    <a class="text-slate-600 dark:text-white text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary" href="contact.html">Contact</a> -->
-</nav>
-</div>
+<body class="font-display bg-background-dark text-slate-100 antialiased">
+
+<!-- Navigation -->
+<header class="sticky top-0 z-50 border-b border-white/[0.06] bg-background-dark/80 backdrop-blur-xl">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+            <div class="flex items-center gap-3">
+                <div class="size-7 text-primary shrink-0">
+                    <svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                        <path clip-rule="evenodd" d="M24 18.4228L42 11.475V34.3663C42 34.7796 41.7457 35.1504 41.3601 35.2992L24 42V18.4228Z" fill="currentColor" fill-rule="evenodd"></path>
+                        <path clip-rule="evenodd" d="M24 8.18819L33.4123 11.574L24 15.2071L14.5877 11.574L24 8.18819ZM9 15.8487L21 20.4805V37.6263L9 32.9945V15.8487ZM27 37.6263V20.4805L39 15.8487V32.9945L27 37.6263ZM25.354 2.29885C24.4788 1.98402 23.5212 1.98402 22.646 2.29885L4.98454 8.65208C3.7939 9.08038 3 10.2097 3 11.475V34.3663C3 36.0196 4.01719 37.5026 5.55962 38.098L22.9197 44.7987C23.6149 45.0671 24.3851 45.0671 25.0803 44.7987L42.4404 38.098C43.9828 37.5026 45 36.0196 45 34.3663V11.475C45 10.2097 44.2061 9.08038 43.0155 8.65208L25.354 2.29885Z" fill="currentColor" fill-rule="evenodd"></path>
+                    </svg>
+                </div>
+                <span class="text-white font-bold text-base tracking-tight hidden sm:block">Esther Odulana</span>
+            </div>
+            <nav class="hidden md:flex items-center gap-8">
+                <a href="index.html" class="text-slate-400 hover:text-white text-sm font-medium transition-colors">Home</a>
+                <a href="about-me.html" class="text-slate-400 hover:text-white text-sm font-medium transition-colors">About</a>
+                <a href="index.html#portfolio" class="text-slate-400 hover:text-white text-sm font-medium transition-colors">Portfolio</a>
+                <a href="contact.html" class="text-slate-400 hover:text-white text-sm font-medium transition-colors">Contact</a>
+            </nav>
+            <div class="flex items-center gap-3">
+                <a href="contact.html" class="hidden md:flex items-center justify-center h-9 px-4 rounded-lg bg-primary hover:bg-primary-dark text-white text-sm font-semibold transition-colors">
+                    Get In Touch
+                </a>
+                <button class="md:hidden text-slate-300 hover:text-white">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+            </div>
+        </div>
+    </div>
 </header>
-<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
-<div class="layout-container flex h-full grow flex-col">
-<div class="flex flex-1 justify-center p-4 sm:p-6 md:p-8">
-<div class="layout-content-container flex flex-col w-full max-w-7xl flex-1">
-<!-- Header -->
-<div class="flex flex-col gap-2 py-8">
-<p class="text-slate-900 dark:text-white text-4xl md:text-5xl font-black leading-tight tracking-[-0.033em]">Terry Gerry Electronic Sales Case Study</p>
-<div class="flex flex-wrap gap-3 mt-4">
-<span class="text-xs font-medium text-primary bg-primary/10 px-3 py-1 rounded-full">Excel</span>
-<span class="text-xs font-medium text-primary bg-primary/10 px-3 py-1 rounded-full">Power Pivot</span>
-<span class="text-xs font-medium text-primary bg-primary/10 px-3 py-1 rounded-full">DAX</span>
-<span class="text-xs font-medium text-primary bg-primary/10 px-3 py-1 rounded-full">Power Query</span>
-</div>
-</div>
 
-<!-- Company Overview & Problem Statement -->
-<section class="grid grid-cols-1 md:grid-cols-2 gap-6 py-6">
-<div class="rounded-xl bg-white dark:bg-slate-800/60 p-8 border border-slate-200 dark:border-slate-800">
-<h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">Company Overview</h2>
-<p class="text-slate-600 dark:text-slate-300 leading-relaxed">
-    Terry Gerry is an electronics retail company operating multiple stores across different countries and states.
-</p>
-</div>
-<div class="rounded-xl bg-white dark:bg-slate-800/60 p-8 border border-slate-200 dark:border-slate-800">
-<h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">Problem Statement</h2>
-<p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
-    The available datasets from the Product, Sales, and Store departments did not explicitly include revenue information. Management was unable to translate operational data into clear business insights or evaluate sales performance effectively.
-</p>
-</div>
-</section>
+<main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
 
-<!-- KPI Cards -->
-<div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 py-6">
-<div class="flex flex-col gap-2 rounded-xl bg-white dark:bg-slate-800/60 p-6 border border-slate-200 dark:border-slate-800">
-<p class="text-slate-600 dark:text-slate-400 text-base font-medium leading-normal">Total Orders</p>
-<p class="text-slate-900 dark:text-white tracking-tight text-3xl font-bold leading-tight">26,326</p>
-</div>
-<div class="flex flex-col gap-2 rounded-xl bg-white dark:bg-slate-800/60 p-6 border border-slate-200 dark:border-slate-800">
-<p class="text-slate-600 dark:text-slate-400 text-base font-medium leading-normal">Total Revenue</p>
-<p class="text-slate-900 dark:text-white tracking-tight text-3xl font-bold leading-tight">$55,755,480</p>
-</div>
-<div class="flex flex-col gap-2 rounded-xl bg-white dark:bg-slate-800/60 p-6 border border-slate-200 dark:border-slate-800">
-<p class="text-slate-600 dark:text-slate-400 text-base font-medium leading-normal">Best Selling Category</p>
-<p class="text-slate-900 dark:text-white tracking-tight text-3xl font-bold leading-tight">Computers</p>
-</div>
-<div class="flex flex-col gap-2 rounded-xl bg-white dark:bg-slate-800/60 p-6 border border-slate-200 dark:border-slate-800">
-<p class="text-slate-600 dark:text-slate-400 text-base font-medium leading-normal">Top Country</p>
-<p class="text-slate-900 dark:text-white tracking-tight text-3xl font-bold leading-tight">United States</p>
-</div>
-</div>
+    <!-- Back link -->
+    <a href="index.html#portfolio" class="inline-flex items-center gap-1.5 text-slate-500 hover:text-primary text-sm font-medium transition-colors mb-10">
+        <span class="material-symbols-outlined text-base leading-none">arrow_back</span>
+        Back to Portfolio
+    </a>
 
-<!-- Main Visualizations Grid -->
-<div class="grid grid-cols-1 lg:grid-cols-3 gap-6 py-6">
-<div class="flex flex-col gap-4 rounded-xl bg-white dark:bg-slate-800/60 p-6 border border-slate-200 dark:border-slate-800 lg:col-span-2">
-<div class="flex flex-col">
-<p class="text-slate-800 dark:text-white text-lg font-medium leading-normal">Dashboard Overview</p>
-<p class="text-slate-500 dark:text-slate-400 text-sm">Visualizing revenue, orders, and geographic performance</p>
-</div>
-<div class="w-full h-auto">
-<img class="w-full h-auto rounded-lg" alt="Electronic Sales Dashboard" src="images/Dashboard.png"/>
-</div>
-</div>
-<div class="flex flex-col gap-4 rounded-xl bg-white dark:bg-slate-800/60 p-6 border border-slate-200 dark:border-slate-800">
-<p class="text-slate-800 dark:text-white text-lg font-medium leading-normal">Top Brands (Quantity)</p>
-<div class="space-y-4 py-4">
-    <div class="flex flex-col gap-1">
-        <div class="flex justify-between text-sm"><span class="dark:text-white">Contoso</span><span class="dark:text-slate-400">49,827 units</span></div>
-        <div class="w-full bg-slate-200 dark:bg-slate-700 h-2 rounded-full"><div class="bg-primary h-2 rounded-full" style="width: 100%"></div></div>
+    <!-- Case Study Header -->
+    <section class="mb-14">
+        <div class="flex flex-wrap gap-2 mb-5">
+            <span class="text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full">Excel</span>
+            <span class="text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full">Power Pivot</span>
+            <span class="text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full">DAX</span>
+            <span class="text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full">Power Query</span>
+        </div>
+        <h1 class="text-4xl lg:text-5xl font-black leading-tight tracking-tight text-white mb-4">
+            Terry Gerry<br>
+            <span class="gradient-text">Electronic Sales Analysis</span>
+        </h1>
+        <p class="text-slate-400 text-lg leading-relaxed max-w-2xl">
+            Building a star schema data model from disconnected department datasets to unlock revenue insights and drive strategic sales decisions.
+        </p>
+    </section>
+
+    <!-- Overview + Problem -->
+    <section class="mb-14 grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div class="card-hover rounded-2xl bg-surface-dark border border-white/[0.06] p-7 hover:border-primary/25">
+            <h2 class="text-white font-bold text-lg mb-3">Company Overview</h2>
+            <p class="text-slate-400 text-sm leading-relaxed">
+                Terry Gerry is an electronics retail company operating multiple stores across different countries and states, selling products across categories including Computers, Audio, Cameras, and Home Appliances.
+            </p>
+        </div>
+        <div class="card-hover rounded-2xl bg-surface-dark border border-white/[0.06] p-7 hover:border-primary/25">
+            <h2 class="text-white font-bold text-lg mb-3">Problem Statement</h2>
+            <p class="text-slate-400 text-sm leading-relaxed">
+                Datasets from Product, Sales, and Store departments lacked explicit revenue information. Management was unable to translate operational data into clear business insights or evaluate sales performance effectively.
+            </p>
+        </div>
+    </section>
+
+    <!-- KPI Cards -->
+    <section class="mb-14">
+        <h2 class="text-xl font-bold text-white mb-6">Key Metrics</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div class="card-hover flex flex-col gap-2 rounded-xl bg-surface-dark border border-white/[0.06] p-6 hover:border-primary/25">
+                <p class="text-slate-500 text-sm font-medium">Total Orders</p>
+                <p class="text-white text-3xl font-bold tracking-tight">26,326</p>
+                <p class="text-primary text-xs font-medium">unique orders</p>
+            </div>
+            <div class="card-hover flex flex-col gap-2 rounded-xl bg-surface-dark border border-white/[0.06] p-6 hover:border-primary/25">
+                <p class="text-slate-500 text-sm font-medium">Total Revenue</p>
+                <p class="text-white text-3xl font-bold tracking-tight">$55.7M</p>
+                <p class="text-slate-600 text-xs">$55,755,480 total</p>
+            </div>
+            <div class="card-hover flex flex-col gap-2 rounded-xl bg-surface-dark border border-white/[0.06] p-6 hover:border-primary/25">
+                <p class="text-slate-500 text-sm font-medium">Best Category</p>
+                <p class="text-white text-2xl font-bold tracking-tight leading-tight mt-1">Computers</p>
+                <p class="text-primary text-xs font-medium">10,990 orders</p>
+            </div>
+            <div class="card-hover flex flex-col gap-2 rounded-xl bg-surface-dark border border-white/[0.06] p-6 hover:border-primary/25">
+                <p class="text-slate-500 text-sm font-medium">Top Country</p>
+                <p class="text-white text-2xl font-bold tracking-tight leading-tight mt-1">United States</p>
+                <p class="text-primary text-xs font-medium">11,153 orders</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dashboard -->
+    <section class="mb-14">
+        <div class="rounded-2xl bg-surface-dark border border-white/[0.06] overflow-hidden">
+            <div class="p-6 border-b border-white/[0.06] flex items-start justify-between gap-4">
+                <div>
+                    <h2 class="text-white font-bold text-lg">Dashboard Overview</h2>
+                    <p class="text-slate-500 text-sm mt-1">Visualizing revenue, orders, and geographic performance</p>
+                </div>
+            </div>
+            <div class="p-4">
+                <img class="w-full h-auto rounded-xl shadow-2xl" alt="Electronic Sales Dashboard" src="images/dashboard.png"/>
+            </div>
+        </div>
+    </section>
+
+    <!-- Top Brands + Analysis -->
+    <section class="mb-14 grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <!-- Brand bar chart -->
+        <div class="rounded-2xl bg-surface-dark border border-white/[0.06] p-6">
+            <h3 class="text-white font-semibold mb-1">Top Brands by Volume</h3>
+            <p class="text-slate-500 text-xs mb-5">Units sold</p>
+            <div class="space-y-4">
+                <div>
+                    <div class="flex justify-between text-sm mb-1.5">
+                        <span class="text-slate-300 font-medium">Contoso</span>
+                        <span class="text-slate-500">49,827 units</span>
+                    </div>
+                    <div class="w-full h-1.5 bg-white/[0.06] rounded-full">
+                        <div class="bg-primary h-1.5 rounded-full" style="width:100%"></div>
+                    </div>
+                </div>
+                <div>
+                    <div class="flex justify-between text-sm mb-1.5">
+                        <span class="text-slate-300 font-medium">WWI</span>
+                        <span class="text-slate-500">27,413 units</span>
+                    </div>
+                    <div class="w-full h-1.5 bg-white/[0.06] rounded-full">
+                        <div class="bg-primary h-1.5 rounded-full" style="width:55%"></div>
+                    </div>
+                </div>
+                <div>
+                    <div class="flex justify-between text-sm mb-1.5">
+                        <span class="text-slate-300 font-medium">Southridge Video</span>
+                        <span class="text-slate-500">24,814 units</span>
+                    </div>
+                    <div class="w-full h-1.5 bg-white/[0.06] rounded-full">
+                        <div class="bg-primary h-1.5 rounded-full" style="width:50%"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-5 p-3 rounded-lg bg-primary/[0.08] border border-primary/10">
+                <p class="text-primary text-xs font-semibold mb-1">Key Trend</p>
+                <p class="text-slate-400 text-xs leading-relaxed">Sales data shows consistent high demand in <strong class="text-slate-300">February</strong>, indicating recurring seasonality.</p>
+            </div>
+        </div>
+
+        <!-- Findings -->
+        <div class="lg:col-span-2 space-y-4">
+            <div class="card-hover rounded-xl bg-surface-dark border border-white/[0.06] p-5 hover:border-primary/25">
+                <h3 class="flex items-center gap-2 font-semibold text-white mb-2">
+                    <span class="material-symbols-outlined text-primary text-lg">laptop_mac</span>
+                    Product Performance
+                </h3>
+                <ul class="text-slate-400 text-sm space-y-1.5">
+                    <li><strong class="text-slate-300">Best Category:</strong> Computers (10,990 orders)</li>
+                    <li><strong class="text-slate-300">Top Products:</strong> WWI Desktop PC 2.33 X2330 Black; AW Desktop PC 2.33 XD233 Silver</li>
+                </ul>
+            </div>
+            <div class="card-hover rounded-xl bg-surface-dark border border-white/[0.06] p-5 hover:border-primary/25">
+                <h3 class="flex items-center gap-2 font-semibold text-white mb-2">
+                    <span class="material-symbols-outlined text-primary text-lg">public</span>
+                    Geographic Performance
+                </h3>
+                <ul class="text-slate-400 text-sm space-y-1.5">
+                    <li><strong class="text-slate-300">Top Country:</strong> United States</li>
+                    <li><strong class="text-slate-300">Orders:</strong> 11,153 &nbsp;•&nbsp; <strong class="text-slate-300">Revenue:</strong> $23,764,426</li>
+                </ul>
+            </div>
+            <div class="card-hover rounded-xl bg-surface-dark border border-white/[0.06] p-5 hover:border-primary/25">
+                <h3 class="flex items-center gap-2 font-semibold text-white mb-2">
+                    <span class="material-symbols-outlined text-primary text-lg">brand_family</span>
+                    Brand Coverage
+                </h3>
+                <p class="text-slate-400 text-sm leading-relaxed">
+                    <strong class="text-slate-300">Contoso</strong> leads with 49,827 units sold, spanning Computers, Audio, Cameras, Cell Phones, and Home Appliances.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Approach -->
+    <section class="mb-14">
+        <div class="rounded-2xl bg-surface-dark border border-white/[0.06] p-8">
+            <h2 class="text-white font-bold text-xl mb-6">Technical Approach</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-slate-500 text-xs font-bold uppercase tracking-widest mb-4">ETL & Modeling</h3>
+                    <ul class="text-slate-400 text-sm space-y-2.5 list-disc list-inside leading-relaxed">
+                        <li>Imported CSV & PDF data from Procurement, CX, and Sales departments.</li>
+                        <li>Extracted a unique Calendar table from Sales data for time intelligence.</li>
+                        <li>Built <strong class="text-slate-300">One-to-Many Star Schema</strong> relationships using Power Pivot.</li>
+                        <li>Defined Primary Keys in Product/Store tables and Foreign Keys in Sales table.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-slate-500 text-xs font-bold uppercase tracking-widest mb-4">Analysis & Calculations</h3>
+                    <ul class="text-slate-400 text-sm space-y-2.5 list-disc list-inside leading-relaxed">
+                        <li>Used Pivot Tables for high-level aggregated data views.</li>
+                        <li><strong class="text-slate-300">DAX (Orders):</strong> Created using <code class="text-primary bg-primary/10 px-1 rounded text-xs">DISTINCTCOUNT</code> for unique order numbers.</li>
+                        <li><strong class="text-slate-300">DAX (Revenue):</strong> Calculated as Quantity Sold × Unit Price.</li>
+                        <li>Applied interactive filters and slicers for country-level drill-downs.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Data Relationships Image -->
+    <section class="mb-14">
+        <div class="rounded-2xl bg-surface-dark border border-white/[0.06] overflow-hidden">
+            <div class="p-5 border-b border-white/[0.06]">
+                <h3 class="text-white font-semibold">Data Relationships — One-to-Many Star Schema</h3>
+            </div>
+            <div class="p-4">
+                <img class="w-full h-auto rounded-xl" alt="One to Many Data Connection" src="images/One%20to%20Many%20Data%20Connection.png"/>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <div class="flex flex-wrap gap-4">
+        <a href="https://github.com/estherodulana/electronics-sales-analysis2/"
+           class="flex items-center gap-2 h-11 px-6 rounded-xl border border-white/10 hover:border-primary/40 bg-white/[0.04] hover:bg-primary/[0.06] text-white text-sm font-semibold transition-all">
+            <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.165 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.942.359.308.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.578.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" fill-rule="evenodd"></path></svg>
+            View on GitHub
+        </a>
+        <a href="index.html#portfolio" class="flex items-center gap-2 h-11 px-6 rounded-xl bg-primary hover:bg-primary-dark text-white text-sm font-semibold transition-all">
+            ← All Projects
+        </a>
     </div>
-    <div class="flex flex-col gap-1">
-        <div class="flex justify-between text-sm"><span class="dark:text-white">WWI</span><span class="dark:text-slate-400">27,413 units</span></div>
-        <div class="w-full bg-slate-200 dark:bg-slate-700 h-2 rounded-full"><div class="bg-primary h-2 rounded-full" style="width: 55%"></div></div>
+</main>
+
+<!-- Footer -->
+<footer class="border-t border-white/[0.05] py-8 mt-16">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+            <span class="text-slate-500 text-sm">Esther Odulana — Data Analyst</span>
+            <div class="flex items-center gap-6">
+                <a href="https://www.linkedin.com/in/esther-odulana-081316253/" class="text-slate-500 hover:text-primary text-sm transition-colors">LinkedIn</a>
+                <a href="https://github.com/estherodulana" class="text-slate-500 hover:text-primary text-sm transition-colors">GitHub</a>
+            </div>
+            <p class="text-slate-600 text-sm">© 2025 All rights reserved.</p>
+        </div>
     </div>
-    <div class="flex flex-col gap-1">
-        <div class="flex justify-between text-sm"><span class="dark:text-white">Southridge Video</span><span class="dark:text-slate-400">24,814 units</span></div>
-        <div class="w-full bg-slate-200 dark:bg-slate-700 h-2 rounded-full"><div class="bg-primary h-2 rounded-full" style="width: 50%"></div></div>
-    </div>
-</div>
-<div class="mt-auto p-4 bg-primary/10 rounded-lg">
-    <p class="text-sm font-bold text-primary mb-1">Key Trend</p>
-    <p class="text-xs text-slate-600 dark:text-slate-300">Sales data shows consistent high demand in <strong>February</strong>, indicating recurring seasonality.</p>
-</div>
-</div>
-</div>
+</footer>
 
-<!-- Detailed Analysis & Findings -->
-<section class="py-6">
-<h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-6">Analysis & Key Findings</h2>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-<div class="rounded-xl bg-white dark:bg-slate-800/60 p-6 border border-slate-200 dark:border-slate-800">
-<h3 class="font-bold text-primary mb-3 flex items-center gap-2"><span class="material-symbols-outlined">laptop_mac</span> Product Performance</h3>
-<ul class="text-sm text-slate-600 dark:text-slate-300 space-y-3">
-    <li><strong>Best Category:</strong> Computers (10,990 Orders)</li>
-    <li><strong>Top 3 Products:</strong><br/>
-        1. WWI Desktop PC 2.33 X2330 Black<br/>
-        2. AW Desktop PC 2.33 XD233 Silver<br/>
-        3. AW Desktop PC 2.33 XD233 Brown
-    </li>
-</ul>
-</div>
-<div class="rounded-xl bg-white dark:bg-slate-800/60 p-6 border border-slate-200 dark:border-slate-800">
-<h3 class="font-bold text-primary mb-3 flex items-center gap-2"><span class="material-symbols-outlined">public</span> Geographic Performance</h3>
-<ul class="text-sm text-slate-600 dark:text-slate-300 space-y-3">
-    <li><strong>Top Country:</strong> United State</li>
-    <li><strong>Total Orders:</strong> 11,153</li>
-    <li><strong>Total Revenue:</strong> $23,764,426</li>
-</ul>
-</div>
-<div class="rounded-xl bg-white dark:bg-slate-800/60 p-6 border border-slate-200 dark:border-slate-800">
-<h3 class="font-bold text-primary mb-3 flex items-center gap-2"><span class="material-symbols-outlined">brand_family</span> Brand Coverage</h3>
-<p class="text-sm text-slate-600 dark:text-slate-300">
-    <strong>Contoso</strong> leads with 49,827 units sold, covering Computers, Audio, Cameras, Cell Phones, Home Appliances, and more.
-</p>
-</div>
-</div>
-</section>
-
-<!-- Technical Approach -->
-<section class="py-6">
-<div class="rounded-xl bg-white dark:bg-slate-800/60 p-8 border border-slate-200 dark:border-slate-800">
-<h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-6">Technical Approach</h2>
-<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-<div>
-    <h3 class="font-bold dark:text-white mb-3 text-sm uppercase tracking-wider opacity-60">ETL & Modeling</h3>
-    <ul class="text-sm text-slate-600 dark:text-slate-300 space-y-2 list-disc list-inside">
-        <li>Imported CSV & PDF data from Procurement, CX, and Sales departments.</li>
-        <li>Extracted unique Calendar table from Sales data.</li>
-        <li>Built <strong>One-to-Many Star Schema</strong> relationships using Power Pivot.</li>
-        <li>Defined Primary Keys in Product/Store tables and Foreign Keys in Sales table.</li>
-    </ul>
-</div>
-<div>
-    <h3 class="font-bold dark:text-white mb-3 text-sm uppercase tracking-wider opacity-60">Analysis & Calculations</h3>
-    <ul class="text-sm text-slate-600 dark:text-slate-300 space-y-2 list-disc list-inside">
-        <li>Used Pivot Tables for high-level aggregated data views.</li>
-        <li><strong>DAX Measure (Orders):</strong> Created using <code>DISTINCTCOUNT</code> for unique order numbers.</li>
-        <li><strong>DAX Measure (Revenue):</strong> Calculated as <code>Quantity Sold × Unit Price</code>.</li>
-        <li>Applied interactive filters and slicers for country-level drill-downs.</li>
-    </ul>
-</div>
-<div class="flex flex-col gap-3">
-    <h3 class="font-bold dark:text-white mb-3 text-sm uppercase tracking-wider opacity-60">Data Relationships</h3>
-    <img class="w-full h-auto rounded-lg shadow-sm border border-slate-200 dark:border-slate-800" alt="One to Many Data Connection" src="images/One%20to%20Many%20Data%20Connection.png"/>
-</div>
-</div>
-</div>
-</section>
-
-<!-- Final Section with Footer -->
-<div class="py-10 border-t border-white/10 mt-10 text-center">
-    <p class="text-slate-500 text-sm">Case Study | Esther Odulana Portfolio</p>
-</div>
-
-</div>
-</div>
-</div>
-</div>
-</body></html>
+</body>
+</html>
