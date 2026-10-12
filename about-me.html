@@ -4,6 +4,8 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Esther Odulana | About Me</title>
+<meta name="description" content="About Esther Odulana, a data analyst working with Excel, SQL, Power BI, DAX and Power Query."/>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23e8a424'/%3E%3Ctext x='16' y='21.5' font-family='Arial,sans-serif' font-size='13' font-weight='900' text-anchor='middle' fill='%2307070f'%3EEO%3C/text%3E%3C/svg%3E"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
@@ -43,31 +45,40 @@
 <header class="sticky top-0 z-50 border-b border-white/[0.06] bg-background-dark/80 backdrop-blur-xl">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-16">
-            <div class="flex items-center gap-3">
-                <div class="size-7 text-primary shrink-0">
-                    <svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                        <path clip-rule="evenodd" d="M24 18.4228L42 11.475V34.3663C42 34.7796 41.7457 35.1504 41.3601 35.2992L24 42V18.4228Z" fill="currentColor" fill-rule="evenodd"></path>
-                        <path clip-rule="evenodd" d="M24 8.18819L33.4123 11.574L24 15.2071L14.5877 11.574L24 8.18819ZM9 15.8487L21 20.4805V37.6263L9 32.9945V15.8487ZM27 37.6263V20.4805L39 15.8487V32.9945L27 37.6263ZM25.354 2.29885C24.4788 1.98402 23.5212 1.98402 22.646 2.29885L4.98454 8.65208C3.7939 9.08038 3 10.2097 3 11.475V34.3663C3 36.0196 4.01719 37.5026 5.55962 38.098L22.9197 44.7987C23.6149 45.0671 24.3851 45.0671 25.0803 44.7987L42.4404 38.098C43.9828 37.5026 45 36.0196 45 34.3663V11.475C45 10.2097 44.2061 9.08038 43.0155 8.65208L25.354 2.29885Z" fill="currentColor" fill-rule="evenodd"></path>
-                    </svg>
-                </div>
-                <span class="text-white font-bold text-base tracking-tight hidden sm:block">Esther Odulana</span>
-            </div>
+            <a href="index.html" class="flex items-center gap-3">
+                <div class="flex items-center justify-center size-8 rounded-lg bg-primary text-background-dark text-xs font-black tracking-tight shrink-0">EO</div>
+                <span class="text-white font-bold text-base tracking-tight">Esther Odulana</span>
+            </a>
             <nav class="hidden md:flex items-center gap-8">
-                <a href="index.html" class="text-slate-400 hover:text-white text-sm font-medium transition-colors">Home</a>
-                <a href="about-me.html" class="text-white text-sm font-medium">About</a>
-                <a href="index.html#portfolio" class="text-slate-400 hover:text-white text-sm font-medium transition-colors">Portfolio</a>
-                <a href="contact.html" class="text-slate-400 hover:text-white text-sm font-medium transition-colors">Contact</a>
+                <a href="index.html#work" class="text-slate-300 hover:text-white text-sm font-medium transition-colors">Work</a>
+                <a href="index.html#approach" class="text-slate-300 hover:text-white text-sm font-medium transition-colors">Approach</a>
+                <a href="about-me.html" aria-current="page" class="text-white text-sm font-medium transition-colors">About</a>
+                <a href="contact.html" class="text-slate-300 hover:text-white text-sm font-medium transition-colors">Contact</a>
             </nav>
             <div class="flex items-center gap-3">
-                <a href="contact.html" class="hidden md:flex items-center justify-center h-9 px-4 rounded-lg bg-primary hover:bg-primary-dark text-white text-sm font-semibold transition-colors">
-                    Get In Touch
+                <a href="mailto:estherodulana@gmail.com" class="hidden md:flex items-center gap-2 h-9 px-4 rounded-lg bg-primary hover:bg-primary-dark text-background-dark text-sm font-semibold transition-colors">
+                    <span class="material-symbols-outlined text-lg leading-none">mail</span>
+                    Email Me
                 </a>
-                <button class="md:hidden text-slate-300 hover:text-white">
+                <button id="menu-toggle" type="button" class="md:hidden flex items-center justify-center size-10 rounded-lg text-slate-300 hover:text-white hover:bg-white/[0.06]" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
                     <span class="material-symbols-outlined">menu</span>
                 </button>
             </div>
         </div>
     </div>
+    <!-- Mobile menu -->
+    <nav id="mobile-menu" class="hidden md:hidden border-t border-white/[0.06] bg-background-dark">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex flex-col gap-1">
+            <a href="index.html#work" class="px-3 py-3 rounded-lg text-slate-200 hover:bg-white/[0.05] font-medium">Work</a>
+            <a href="index.html#approach" class="px-3 py-3 rounded-lg text-slate-200 hover:bg-white/[0.05] font-medium">Approach</a>
+            <a href="about-me.html" aria-current="page" class="px-3 py-3 rounded-lg text-white bg-white/[0.05] font-medium">About</a>
+            <a href="contact.html" class="px-3 py-3 rounded-lg text-slate-200 hover:bg-white/[0.05] font-medium">Contact</a>
+            <a href="mailto:estherodulana@gmail.com" class="mt-2 flex items-center justify-center gap-2 h-11 rounded-lg bg-primary text-background-dark font-semibold">
+                <span class="material-symbols-outlined text-lg leading-none">mail</span>
+                Email Me
+            </a>
+        </div>
+    </nav>
 </header>
 
 <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
@@ -83,15 +94,15 @@
         <div class="text-center md:text-left">
             <h1 class="text-3xl lg:text-4xl font-bold text-white mb-1">Esther Odulana</h1>
             <p class="text-primary font-medium mb-3">Data Analyst</p>
-            <p class="text-slate-400 leading-relaxed max-w-2xl">
+            <p class="text-slate-300 leading-relaxed max-w-2xl">
                 A data analyst passionate about transforming complex datasets into actionable insights that drive strategic decision-making. I thrive at the intersection of data and business, helping organizations understand their numbers and act on them.
             </p>
             <div class="flex flex-wrap gap-2 mt-4 justify-center md:justify-start">
-                <span class="px-3 py-1 rounded-full bg-surface-2-dark border border-white/[0.08] text-slate-400 text-xs font-medium">Excel</span>
-                <span class="px-3 py-1 rounded-full bg-surface-2-dark border border-white/[0.08] text-slate-400 text-xs font-medium">SQL</span>
-                <span class="px-3 py-1 rounded-full bg-surface-2-dark border border-white/[0.08] text-slate-400 text-xs font-medium">Power BI</span>
-                <span class="px-3 py-1 rounded-full bg-surface-2-dark border border-white/[0.08] text-slate-400 text-xs font-medium">DAX</span>
-                <span class="px-3 py-1 rounded-full bg-surface-2-dark border border-white/[0.08] text-slate-400 text-xs font-medium">Power Query</span>
+                <span class="px-3 py-1 rounded-full bg-surface-2-dark border border-white/[0.08] text-slate-300 text-xs font-medium">Excel</span>
+                <span class="px-3 py-1 rounded-full bg-surface-2-dark border border-white/[0.08] text-slate-300 text-xs font-medium">SQL</span>
+                <span class="px-3 py-1 rounded-full bg-surface-2-dark border border-white/[0.08] text-slate-300 text-xs font-medium">Power BI</span>
+                <span class="px-3 py-1 rounded-full bg-surface-2-dark border border-white/[0.08] text-slate-300 text-xs font-medium">DAX</span>
+                <span class="px-3 py-1 rounded-full bg-surface-2-dark border border-white/[0.08] text-slate-300 text-xs font-medium">Power Query</span>
             </div>
         </div>
     </section>
@@ -112,9 +123,9 @@
                             <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-1">
                                 <h3 class="text-white font-semibold">Data Analyst</h3>
                                 <span class="text-primary text-sm font-medium">Orungroup</span>
-                                <span class="text-slate-600 text-xs">2020 – Present</span>
+                                <span class="text-slate-500 text-xs">2020 – Present</span>
                             </div>
-                            <ul class="text-slate-500 text-sm space-y-1.5 list-disc list-inside leading-relaxed">
+                            <ul class="text-slate-400 text-sm space-y-1.5 list-disc list-inside leading-relaxed">
                                 <li>Led a team to develop a predictive model that improved sales forecasting accuracy by 25%.</li>
                                 <li>Designed and maintained BI dashboards providing stakeholders with real-time business insights.</li>
                                 <li>Automated data extraction and cleaning processes using SQL, reducing manual effort by 40 hrs/week.</li>
@@ -130,9 +141,9 @@
                             <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-1">
                                 <h3 class="text-white font-semibold">Data Analyst</h3>
                                 <span class="text-primary text-sm font-medium">Analytics Solutions</span>
-                                <span class="text-slate-600 text-xs">2018 – 2020</span>
+                                <span class="text-slate-500 text-xs">2018 – 2020</span>
                             </div>
-                            <ul class="text-slate-500 text-sm space-y-1.5 list-disc list-inside leading-relaxed">
+                            <ul class="text-slate-400 text-sm space-y-1.5 list-disc list-inside leading-relaxed">
                                 <li>Analyzed customer behavior data to identify trends, contributing to 15% increase in user retention.</li>
                                 <li>Created comprehensive reports and visualizations to communicate findings to non-technical audiences.</li>
                             </ul>
@@ -146,8 +157,8 @@
                         <div class="pl-4">
                             <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1">
                                 <h3 class="text-white font-semibold">M.S. in Data Science</h3>
-                                <span class="text-slate-400 text-sm">State University</span>
-                                <span class="text-slate-600 text-xs">2016 – 2018</span>
+                                <span class="text-slate-300 text-sm">State University</span>
+                                <span class="text-slate-500 text-xs">2016 – 2018</span>
                             </div>
                         </div>
                     </div>
@@ -207,16 +218,16 @@
             <div class="rounded-xl bg-surface-dark border border-white/[0.06] p-6">
                 <h3 class="text-white font-semibold mb-5">Personal Interests</h3>
                 <div class="flex flex-wrap gap-2">
-                    <div class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-2-dark border border-white/[0.06] text-slate-400 text-xs">
-                        <span class="material-symbols-outlined text-slate-500" style="font-size:14px;">hiking</span>
+                    <div class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-2-dark border border-white/[0.06] text-slate-300 text-xs">
+                        <span class="material-symbols-outlined text-slate-400" style="font-size:14px;">hiking</span>
                         Hiking
                     </div>
-                    <div class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-2-dark border border-white/[0.06] text-slate-400 text-xs">
-                        <span class="material-symbols-outlined text-slate-500" style="font-size:14px;">photo_camera</span>
+                    <div class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-2-dark border border-white/[0.06] text-slate-300 text-xs">
+                        <span class="material-symbols-outlined text-slate-400" style="font-size:14px;">photo_camera</span>
                         Photography
                     </div>
-                    <div class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-2-dark border border-white/[0.06] text-slate-400 text-xs">
-                        <span class="material-symbols-outlined text-slate-500" style="font-size:14px;">chess</span>
+                    <div class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-2-dark border border-white/[0.06] text-slate-300 text-xs">
+                        <span class="material-symbols-outlined text-slate-400" style="font-size:14px;">chess</span>
                         Chess
                     </div>
                 </div>
@@ -225,8 +236,8 @@
             <!-- Connect -->
             <div class="rounded-xl bg-gradient-to-br from-primary/[0.08] to-violet-500/[0.08] border border-primary/20 p-6">
                 <h3 class="text-white font-semibold mb-2">Ready to collaborate?</h3>
-                <p class="text-slate-400 text-sm leading-relaxed mb-4">Let's connect and discuss how my data expertise can help your business.</p>
-                <a href="contact.html" class="flex w-full items-center justify-center h-10 rounded-lg bg-primary hover:bg-primary-dark text-white text-sm font-semibold transition-colors">
+                <p class="text-slate-300 text-sm leading-relaxed mb-4">Let's connect and discuss how my data expertise can help your business.</p>
+                <a href="contact.html" class="flex w-full items-center justify-center h-10 rounded-lg bg-primary hover:bg-primary-dark text-background-dark text-sm font-semibold transition-colors">
                     Get In Touch
                 </a>
             </div>
@@ -235,18 +246,41 @@
 </main>
 
 <!-- Footer -->
-<footer class="border-t border-white/[0.05] py-8 mt-8">
+<footer class="border-t border-white/[0.06] py-8 mt-8">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
-            <span class="text-slate-500 text-sm">Esther Odulana — Data Analyst</span>
-            <div class="flex items-center gap-6">
-                <a href="https://www.linkedin.com/in/esther-odulana-081316253/" class="text-slate-500 hover:text-primary text-sm transition-colors">LinkedIn</a>
-                <a href="https://github.com/estherodulana" class="text-slate-500 hover:text-primary text-sm transition-colors">GitHub</a>
+            <div class="flex items-center gap-2.5">
+                <div class="flex items-center justify-center size-6 rounded-md bg-primary text-background-dark text-[10px] font-black tracking-tight shrink-0">EO</div>
+                <span class="text-slate-400 text-sm">Esther Odulana — Data Analyst</span>
             </div>
-            <p class="text-slate-600 text-sm">© 2025 All rights reserved.</p>
+            <div class="flex items-center gap-6">
+                <a href="https://www.linkedin.com/in/esther-odulana-081316253/" class="text-slate-400 hover:text-primary text-sm transition-colors">LinkedIn</a>
+                <a href="https://github.com/estherodulana" class="text-slate-400 hover:text-primary text-sm transition-colors">GitHub</a>
+                <a href="mailto:estherodulana@gmail.com" class="text-slate-400 hover:text-primary text-sm transition-colors">Email</a>
+            </div>
+            <p class="text-slate-500 text-sm">© <span id="year">2026</span> Esther Odulana</p>
         </div>
     </div>
 </footer>
+
+<script>
+    (function () {
+        // Mobile menu
+        const toggle = document.getElementById('menu-toggle');
+        const menu = document.getElementById('mobile-menu');
+        const icon = toggle.querySelector('.material-symbols-outlined');
+        const setOpen = open => {
+            menu.classList.toggle('hidden', !open);
+            toggle.setAttribute('aria-expanded', String(open));
+            toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+            icon.textContent = open ? 'close' : 'menu';
+        };
+        toggle.addEventListener('click', () => setOpen(menu.classList.contains('hidden')));
+        menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setOpen(false)));
+
+        document.getElementById('year').textContent = new Date().getFullYear();
+    })();
+</script>
 
 </body>
 </html>

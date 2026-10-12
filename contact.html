@@ -4,6 +4,8 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Esther Odulana | Contact</title>
+<meta name="description" content="Get in touch with Esther Odulana by email, phone or LinkedIn."/>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23e8a424'/%3E%3Ctext x='16' y='21.5' font-family='Arial,sans-serif' font-size='13' font-weight='900' text-anchor='middle' fill='%2307070f'%3EEO%3C/text%3E%3C/svg%3E"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
@@ -27,6 +29,8 @@
 </script>
 <style>
     .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    .card-hover { transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease; }
+    .card-hover:hover { transform: translateY(-3px); box-shadow: 0 20px 40px rgba(232, 164, 36, 0.10); }
 </style>
 </head>
 <body class="font-display bg-background-dark text-slate-100 antialiased">
@@ -35,31 +39,40 @@
 <header class="sticky top-0 z-50 border-b border-white/[0.06] bg-background-dark/80 backdrop-blur-xl">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-16">
-            <div class="flex items-center gap-3">
-                <div class="size-7 text-primary shrink-0">
-                    <svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                        <path clip-rule="evenodd" d="M24 18.4228L42 11.475V34.3663C42 34.7796 41.7457 35.1504 41.3601 35.2992L24 42V18.4228Z" fill="currentColor" fill-rule="evenodd"></path>
-                        <path clip-rule="evenodd" d="M24 8.18819L33.4123 11.574L24 15.2071L14.5877 11.574L24 8.18819ZM9 15.8487L21 20.4805V37.6263L9 32.9945V15.8487ZM27 37.6263V20.4805L39 15.8487V32.9945L27 37.6263ZM25.354 2.29885C24.4788 1.98402 23.5212 1.98402 22.646 2.29885L4.98454 8.65208C3.7939 9.08038 3 10.2097 3 11.475V34.3663C3 36.0196 4.01719 37.5026 5.55962 38.098L22.9197 44.7987C23.6149 45.0671 24.3851 45.0671 25.0803 44.7987L42.4404 38.098C43.9828 37.5026 45 36.0196 45 34.3663V11.475C45 10.2097 44.2061 9.08038 43.0155 8.65208L25.354 2.29885Z" fill="currentColor" fill-rule="evenodd"></path>
-                    </svg>
-                </div>
-                <span class="text-white font-bold text-base tracking-tight hidden sm:block">Esther Odulana</span>
-            </div>
+            <a href="index.html" class="flex items-center gap-3">
+                <div class="flex items-center justify-center size-8 rounded-lg bg-primary text-background-dark text-xs font-black tracking-tight shrink-0">EO</div>
+                <span class="text-white font-bold text-base tracking-tight">Esther Odulana</span>
+            </a>
             <nav class="hidden md:flex items-center gap-8">
-                <a href="index.html" class="text-slate-400 hover:text-white text-sm font-medium transition-colors">Home</a>
-                <a href="about-me.html" class="text-slate-400 hover:text-white text-sm font-medium transition-colors">About</a>
-                <a href="index.html#portfolio" class="text-slate-400 hover:text-white text-sm font-medium transition-colors">Portfolio</a>
-                <a href="contact.html" class="text-white text-sm font-medium">Contact</a>
+                <a href="index.html#work" class="text-slate-300 hover:text-white text-sm font-medium transition-colors">Work</a>
+                <a href="index.html#approach" class="text-slate-300 hover:text-white text-sm font-medium transition-colors">Approach</a>
+                <a href="about-me.html" class="text-slate-300 hover:text-white text-sm font-medium transition-colors">About</a>
+                <a href="contact.html" aria-current="page" class="text-white text-sm font-medium transition-colors">Contact</a>
             </nav>
             <div class="flex items-center gap-3">
-                <a href="contact.html" class="hidden md:flex items-center justify-center h-9 px-4 rounded-lg bg-primary hover:bg-primary-dark text-white text-sm font-semibold transition-colors">
-                    Get In Touch
+                <a href="mailto:estherodulana@gmail.com" class="hidden md:flex items-center gap-2 h-9 px-4 rounded-lg bg-primary hover:bg-primary-dark text-background-dark text-sm font-semibold transition-colors">
+                    <span class="material-symbols-outlined text-lg leading-none">mail</span>
+                    Email Me
                 </a>
-                <button class="md:hidden text-slate-300 hover:text-white">
+                <button id="menu-toggle" type="button" class="md:hidden flex items-center justify-center size-10 rounded-lg text-slate-300 hover:text-white hover:bg-white/[0.06]" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
                     <span class="material-symbols-outlined">menu</span>
                 </button>
             </div>
         </div>
     </div>
+    <!-- Mobile menu -->
+    <nav id="mobile-menu" class="hidden md:hidden border-t border-white/[0.06] bg-background-dark">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex flex-col gap-1">
+            <a href="index.html#work" class="px-3 py-3 rounded-lg text-slate-200 hover:bg-white/[0.05] font-medium">Work</a>
+            <a href="index.html#approach" class="px-3 py-3 rounded-lg text-slate-200 hover:bg-white/[0.05] font-medium">Approach</a>
+            <a href="about-me.html" class="px-3 py-3 rounded-lg text-slate-200 hover:bg-white/[0.05] font-medium">About</a>
+            <a href="contact.html" aria-current="page" class="px-3 py-3 rounded-lg text-white bg-white/[0.05] font-medium">Contact</a>
+            <a href="mailto:estherodulana@gmail.com" class="mt-2 flex items-center justify-center gap-2 h-11 rounded-lg bg-primary text-background-dark font-semibold">
+                <span class="material-symbols-outlined text-lg leading-none">mail</span>
+                Email Me
+            </a>
+        </div>
+    </nav>
 </header>
 
 <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
@@ -67,41 +80,36 @@
     <!-- Page Header -->
     <div class="mb-12">
         <h1 class="text-4xl lg:text-5xl font-black text-white mb-3 tracking-tight">Get in Touch</h1>
-        <p class="text-slate-400 text-lg max-w-xl leading-relaxed">Open to collaborations, job opportunities, and data conversations. Reach out through the form or directly via my profiles.</p>
+        <p class="text-slate-300 text-lg max-w-xl leading-relaxed">Open to collaborations, job opportunities, and data conversations. Reach out by email, phone, or through my profiles.</p>
     </div>
 
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        <!-- Contact Form -->
+        <!-- Direct Contact -->
         <div class="lg:col-span-2 rounded-2xl bg-surface-dark border border-white/[0.06] p-8">
-            <h2 class="text-white font-bold text-xl mb-6">Send a Message</h2>
-            <form class="space-y-5">
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                    <div>
-                        <label class="block text-slate-300 text-sm font-medium mb-2">Your Name</label>
-                        <input type="text" placeholder="Jane Smith"
-                               class="w-full h-12 px-4 rounded-xl bg-surface-2-dark border border-white/[0.08] text-white placeholder:text-slate-600 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary/40 transition-all"/>
+            <h2 class="text-white font-bold text-xl mb-2">Send a Message</h2>
+            <p class="text-slate-400 text-sm mb-6">Email or call me directly — I'd love to hear about your project or opportunity.</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <a href="mailto:estherodulana@gmail.com"
+                   class="card-hover group flex flex-col gap-4 p-6 rounded-xl bg-surface-2-dark border border-white/[0.08] hover:border-primary/40">
+                    <div class="flex items-center justify-center size-11 rounded-xl bg-primary/10 text-primary transition-colors group-hover:bg-primary/20">
+                        <span class="material-symbols-outlined">mail</span>
                     </div>
                     <div>
-                        <label class="block text-slate-300 text-sm font-medium mb-2">Email Address</label>
-                        <input type="email" placeholder="jane@example.com"
-                               class="w-full h-12 px-4 rounded-xl bg-surface-2-dark border border-white/[0.08] text-white placeholder:text-slate-600 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary/40 transition-all"/>
+                        <p class="text-slate-400 text-xs mb-1">Email</p>
+                        <p class="text-white text-sm font-semibold break-all group-hover:text-primary transition-colors">estherodulana@gmail.com</p>
                     </div>
-                </div>
-                <div>
-                    <label class="block text-slate-300 text-sm font-medium mb-2">Subject</label>
-                    <input type="text" placeholder="What's this about?"
-                           class="w-full h-12 px-4 rounded-xl bg-surface-2-dark border border-white/[0.08] text-white placeholder:text-slate-600 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary/40 transition-all"/>
-                </div>
-                <div>
-                    <label class="block text-slate-300 text-sm font-medium mb-2">Message</label>
-                    <textarea rows="5" placeholder="Tell me more about your project or opportunity..."
-                              class="w-full px-4 py-3 rounded-xl bg-surface-2-dark border border-white/[0.08] text-white placeholder:text-slate-600 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary/40 transition-all resize-none"></textarea>
-                </div>
-                <button type="submit"
-                        class="flex items-center justify-center h-12 px-8 rounded-xl bg-primary hover:bg-primary-dark text-white text-sm font-semibold transition-all hover:shadow-lg hover:shadow-primary/20">
-                    Send Message
-                </button>
-            </form>
+                </a>
+                <a href="tel:+2348164532905"
+                   class="card-hover group flex flex-col gap-4 p-6 rounded-xl bg-surface-2-dark border border-white/[0.08] hover:border-primary/40">
+                    <div class="flex items-center justify-center size-11 rounded-xl bg-primary/10 text-primary transition-colors group-hover:bg-primary/20">
+                        <span class="material-symbols-outlined">call</span>
+                    </div>
+                    <div>
+                        <p class="text-slate-400 text-xs mb-1">Phone</p>
+                        <p class="text-white text-sm font-semibold group-hover:text-primary transition-colors">+234 816 453 2905</p>
+                    </div>
+                </a>
+            </div>
         </div>
 
         <!-- Sidebar -->
@@ -115,7 +123,7 @@
                             <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.25 6.5 1.75 1.75 0 016.5 8.25zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"></path></svg>
                         </div>
                         <div>
-                            <p class="text-slate-500 text-xs mb-0.5">LinkedIn</p>
+                            <p class="text-slate-400 text-xs mb-0.5">LinkedIn</p>
                             <p class="text-white text-sm font-medium group-hover:text-primary transition-colors">Esther Odulana</p>
                         </div>
                     </a>
@@ -125,7 +133,7 @@
                             <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" fill-rule="evenodd"></path></svg>
                         </div>
                         <div>
-                            <p class="text-slate-500 text-xs mb-0.5">GitHub</p>
+                            <p class="text-slate-400 text-xs mb-0.5">GitHub</p>
                             <p class="text-white text-sm font-medium group-hover:text-primary transition-colors">estherodulana</p>
                         </div>
                     </a>
@@ -134,25 +142,48 @@
 
             <div class="rounded-2xl bg-gradient-to-br from-primary/[0.08] to-violet-500/[0.08] border border-primary/20 p-6">
                 <h3 class="text-white font-semibold mb-2">Response Time</h3>
-                <p class="text-slate-400 text-sm leading-relaxed">I typically respond within 24–48 hours. Looking forward to connecting!</p>
+                <p class="text-slate-300 text-sm leading-relaxed">I typically respond within 24–48 hours. Looking forward to connecting!</p>
             </div>
         </div>
     </div>
 </main>
 
 <!-- Footer -->
-<footer class="border-t border-white/[0.05] py-8 mt-8">
+<footer class="border-t border-white/[0.06] py-8 mt-8">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
-            <span class="text-slate-500 text-sm">Esther Odulana — Data Analyst</span>
-            <div class="flex items-center gap-6">
-                <a href="https://www.linkedin.com/in/esther-odulana-081316253/" class="text-slate-500 hover:text-primary text-sm transition-colors">LinkedIn</a>
-                <a href="https://github.com/estherodulana" class="text-slate-500 hover:text-primary text-sm transition-colors">GitHub</a>
+            <div class="flex items-center gap-2.5">
+                <div class="flex items-center justify-center size-6 rounded-md bg-primary text-background-dark text-[10px] font-black tracking-tight shrink-0">EO</div>
+                <span class="text-slate-400 text-sm">Esther Odulana — Data Analyst</span>
             </div>
-            <p class="text-slate-600 text-sm">© 2025 All rights reserved.</p>
+            <div class="flex items-center gap-6">
+                <a href="https://www.linkedin.com/in/esther-odulana-081316253/" class="text-slate-400 hover:text-primary text-sm transition-colors">LinkedIn</a>
+                <a href="https://github.com/estherodulana" class="text-slate-400 hover:text-primary text-sm transition-colors">GitHub</a>
+                <a href="mailto:estherodulana@gmail.com" class="text-slate-400 hover:text-primary text-sm transition-colors">Email</a>
+            </div>
+            <p class="text-slate-500 text-sm">© <span id="year">2026</span> Esther Odulana</p>
         </div>
     </div>
 </footer>
+
+<script>
+    (function () {
+        // Mobile menu
+        const toggle = document.getElementById('menu-toggle');
+        const menu = document.getElementById('mobile-menu');
+        const icon = toggle.querySelector('.material-symbols-outlined');
+        const setOpen = open => {
+            menu.classList.toggle('hidden', !open);
+            toggle.setAttribute('aria-expanded', String(open));
+            toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+            icon.textContent = open ? 'close' : 'menu';
+        };
+        toggle.addEventListener('click', () => setOpen(menu.classList.contains('hidden')));
+        menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setOpen(false)));
+
+        document.getElementById('year').textContent = new Date().getFullYear();
+    })();
+</script>
 
 </body>
 </html>

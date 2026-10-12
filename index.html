@@ -1,9 +1,15 @@
 <!DOCTYPE html>
-<html class="dark" lang="en">
+<html class="dark scroll-smooth" lang="en">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Esther Odulana | Data Analyst Portfolio</title>
+<meta name="description" content="Esther Odulana is a data analyst who turns raw, disconnected data into clear dashboards and business decisions using Excel, SQL, Power BI, DAX and Power Query."/>
+<meta property="og:title" content="Esther Odulana | Data Analyst"/>
+<meta property="og:description" content="Turning raw data into decisions — case studies in sales and road-safety analysis."/>
+<meta property="og:type" content="website"/>
+<meta property="og:image" content="images/estherodulana.jpeg"/>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23e8a424'/%3E%3Ctext x='16' y='21.5' font-family='Arial,sans-serif' font-size='13' font-weight='900' text-anchor='middle' fill='%2307070f'%3EEO%3C/text%3E%3C/svg%3E"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
@@ -31,28 +37,38 @@
     .material-symbols-outlined {
         font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
     }
-    .gradient-text {
-        background: linear-gradient(135deg, #fdf8ef 0%, #fde68a 50%, #e8a424 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
+    /* Hero: chart-paper grid that fades out toward the edges */
+    .hero {
+        background: radial-gradient(ellipse 70% 60% at 30% 20%, rgba(232, 164, 36, 0.07), transparent 70%), #07070f;
     }
-    .card-hover {
-        transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    .hero-grid {
+        background-image:
+            linear-gradient(to right, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+        background-size: 64px 64px;
+        -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, #000 30%, transparent 85%);
+        mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, #000 30%, transparent 85%);
     }
-    .card-hover:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 24px 48px rgba(232, 164, 36, 0.14);
-    }
-    .bg-dot-grid {
-        background-image: radial-gradient(circle, rgba(232, 164, 36, 0.07) 1px, transparent 1px);
-        background-size: 28px 28px;
-    }
-    .img-zoom {
-        transition: transform 0.5s ease;
-    }
-    .group:hover .img-zoom {
-        transform: scale(1.05);
+    .axis-ticks-y { background: repeating-linear-gradient(to bottom, rgba(255,255,255,0.3) 0 1px, transparent 1px 20%); }
+    .axis-ticks-x { background: repeating-linear-gradient(to right, rgba(255,255,255,0.3) 0 1px, transparent 1px 20%); }
+
+    /* Hero motion: lines draw in, content rises in sequence */
+    .hero-line { stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw 2.4s 0.3s cubic-bezier(.65,0,.35,1) forwards; }
+    .hero-area { opacity: 0; animation: fade 1.2s 1.6s ease forwards; }
+    .hero-underline { stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw 0.7s 0.7s ease-out forwards; }
+    .hero-in { opacity: 0; transform: translateY(14px); animation: rise 0.7s var(--d, 0ms) cubic-bezier(.2,.7,.2,1) forwards; }
+    @keyframes draw { to { stroke-dashoffset: 0; } }
+    @keyframes fade { to { opacity: 1; } }
+    @keyframes rise { to { opacity: 1; transform: none; } }
+    .img-zoom { transition: transform 0.6s ease; }
+    .group:hover .img-zoom { transform: scale(1.04); }
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.is-visible { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+        .reveal { opacity: 1; transform: none; transition: none; }
+        .img-zoom { transition: none; }
+        .hero-line, .hero-underline { animation: none; stroke-dashoffset: 0; }
+        .hero-area, .hero-in { animation: none; opacity: 1; transform: none; }
     }
 </style>
 </head>
@@ -62,224 +78,388 @@
 <header class="sticky top-0 z-50 border-b border-white/[0.06] bg-background-dark/80 backdrop-blur-xl">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-16">
-            <div class="flex items-center gap-3">
-                <div class="size-7 text-primary shrink-0">
-                    <svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                        <path clip-rule="evenodd" d="M24 18.4228L42 11.475V34.3663C42 34.7796 41.7457 35.1504 41.3601 35.2992L24 42V18.4228Z" fill="currentColor" fill-rule="evenodd"></path>
-                        <path clip-rule="evenodd" d="M24 8.18819L33.4123 11.574L24 15.2071L14.5877 11.574L24 8.18819ZM9 15.8487L21 20.4805V37.6263L9 32.9945V15.8487ZM27 37.6263V20.4805L39 15.8487V32.9945L27 37.6263ZM25.354 2.29885C24.4788 1.98402 23.5212 1.98402 22.646 2.29885L4.98454 8.65208C3.7939 9.08038 3 10.2097 3 11.475V34.3663C3 36.0196 4.01719 37.5026 5.55962 38.098L22.9197 44.7987C23.6149 45.0671 24.3851 45.0671 25.0803 44.7987L42.4404 38.098C43.9828 37.5026 45 36.0196 45 34.3663V11.475C45 10.2097 44.2061 9.08038 43.0155 8.65208L25.354 2.29885Z" fill="currentColor" fill-rule="evenodd"></path>
-                    </svg>
-                </div>
-                <span class="text-white font-bold text-base tracking-tight hidden sm:block">Esther Odulana</span>
-            </div>
+            <a href="index.html" class="flex items-center gap-3">
+                <div class="flex items-center justify-center size-8 rounded-lg bg-primary text-background-dark text-xs font-black tracking-tight shrink-0">EO</div>
+                <span class="text-white font-bold text-base tracking-tight">Esther Odulana</span>
+            </a>
             <nav class="hidden md:flex items-center gap-8">
-                <a href="index.html" class="text-white text-sm font-medium">Home</a>
-                <a href="about-me.html" class="text-slate-400 hover:text-white text-sm font-medium transition-colors">About</a>
-                <a href="#portfolio" class="text-slate-400 hover:text-white text-sm font-medium transition-colors">Portfolio</a>
-                <a href="contact.html" class="text-slate-400 hover:text-white text-sm font-medium transition-colors">Contact</a>
+                <a href="#work" class="text-slate-300 hover:text-white text-sm font-medium transition-colors">Work</a>
+                <a href="#approach" class="text-slate-300 hover:text-white text-sm font-medium transition-colors">Approach</a>
+                <a href="about-me.html" class="text-slate-300 hover:text-white text-sm font-medium transition-colors">About</a>
+                <a href="contact.html" class="text-slate-300 hover:text-white text-sm font-medium transition-colors">Contact</a>
             </nav>
             <div class="flex items-center gap-3">
-                <a href="contact.html" class="hidden md:flex items-center justify-center h-9 px-4 rounded-lg bg-primary hover:bg-primary-dark text-white text-sm font-semibold transition-colors">
-                    Get In Touch
+                <a href="mailto:estherodulana@gmail.com" class="hidden md:flex items-center gap-2 h-9 px-4 rounded-lg bg-primary hover:bg-primary-dark text-background-dark text-sm font-semibold transition-colors">
+                    <span class="material-symbols-outlined text-lg leading-none">mail</span>
+                    Email Me
                 </a>
-                <button class="md:hidden text-slate-300 hover:text-white">
+                <button id="menu-toggle" type="button" class="md:hidden flex items-center justify-center size-10 rounded-lg text-slate-300 hover:text-white hover:bg-white/[0.06]" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
                     <span class="material-symbols-outlined">menu</span>
                 </button>
             </div>
         </div>
     </div>
+    <!-- Mobile menu -->
+    <nav id="mobile-menu" class="hidden md:hidden border-t border-white/[0.06] bg-background-dark">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex flex-col gap-1">
+            <a href="#work" class="px-3 py-3 rounded-lg text-slate-200 hover:bg-white/[0.05] font-medium">Work</a>
+            <a href="#approach" class="px-3 py-3 rounded-lg text-slate-200 hover:bg-white/[0.05] font-medium">Approach</a>
+            <a href="about-me.html" class="px-3 py-3 rounded-lg text-slate-200 hover:bg-white/[0.05] font-medium">About</a>
+            <a href="contact.html" class="px-3 py-3 rounded-lg text-slate-200 hover:bg-white/[0.05] font-medium">Contact</a>
+            <a href="mailto:estherodulana@gmail.com" class="mt-2 flex items-center justify-center gap-2 h-11 rounded-lg bg-primary text-background-dark font-semibold">
+                <span class="material-symbols-outlined text-lg leading-none">mail</span>
+                Email Me
+            </a>
+        </div>
+    </nav>
 </header>
 
 <main>
-    <!-- Hero Section -->
-    <section class="relative overflow-hidden bg-dot-grid py-20 lg:py-32" id="home">
-        <div class="absolute top-[-80px] left-1/3 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px] pointer-events-none"></div>
-        <div class="absolute bottom-0 right-1/4 w-72 h-72 bg-violet-600/10 rounded-full blur-[80px] pointer-events-none"></div>
+    <!-- Hero -->
+    <section class="hero relative overflow-hidden" id="home">
+        <!-- Background: chart gridlines + a faint line traced from 24 months of real casualty data -->
+        <div class="hero-grid absolute inset-0 pointer-events-none" aria-hidden="true"></div>
+        <svg class="hidden md:block absolute inset-x-0 bottom-0 w-full h-[30%] pointer-events-none" viewBox="0 0 1440 320" preserveAspectRatio="none" aria-hidden="true">
+            <defs>
+                <linearGradient id="hero-area" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="#e8a424" stop-opacity="0.06"/>
+                    <stop offset="1" stop-color="#e8a424" stop-opacity="0"/>
+                </linearGradient>
+            </defs>
+            <path class="hero-area" d="M0 152 C10 166 42 235 63 236 C83 238 104 171 125 160 C146 150 167 176 188 172 C209 168 230 141 250 136 C271 130 292 142 313 139 C334 135 355 116 376 116 C397 115 417 132 438 137 C459 142 480 150 501 145 C522 140 543 115 563 105 C584 95 605 78 626 85 C647 91 668 111 689 142 C710 173 730 257 751 272 C772 287 793 246 814 233 C835 219 856 194 877 190 C897 186 918 210 939 210 C960 209 981 191 1002 185 C1023 180 1043 176 1064 174 C1085 173 1106 173 1127 175 C1148 177 1169 186 1190 185 C1210 184 1231 174 1252 168 C1273 162 1294 153 1315 149 C1336 145 1357 125 1377 145 C1398 166 1430 250 1440 271 L1440 320 L0 320 Z" fill="url(#hero-area)"/>
+            <path class="hero-line" pathLength="1" d="M0 152 C10 166 42 235 63 236 C83 238 104 171 125 160 C146 150 167 176 188 172 C209 168 230 141 250 136 C271 130 292 142 313 139 C334 135 355 116 376 116 C397 115 417 132 438 137 C459 142 480 150 501 145 C522 140 543 115 563 105 C584 95 605 78 626 85 C647 91 668 111 689 142 C710 173 730 257 751 272 C772 287 793 246 814 233 C835 219 856 194 877 190 C897 186 918 210 939 210 C960 209 981 191 1002 185 C1023 180 1043 176 1064 174 C1085 173 1106 173 1127 175 C1148 177 1169 186 1190 185 C1210 184 1231 174 1252 168 C1273 162 1294 153 1315 149 C1336 145 1357 125 1377 145 C1398 166 1430 250 1440 271" fill="none" stroke="#e8a424" stroke-opacity="0.22" stroke-width="2" vector-effect="non-scaling-stroke"/>
+        </svg>
 
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div class="flex flex-col gap-7">
-                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-semibold w-fit">
-                        <span class="size-1.5 rounded-full bg-primary animate-pulse"></span>
-                        Open to Opportunities
+        <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-24 lg:pt-24 lg:pb-32">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-14 lg:gap-12 items-center">
+                <div class="lg:col-span-7 flex flex-col gap-7">
+                    <div class="hero-in flex flex-wrap items-center gap-x-4 gap-y-2" style="--d: 0ms">
+                        <span class="flex items-center gap-2 text-slate-300 text-xs font-bold uppercase tracking-[0.2em]">
+                            <span class="h-px w-8 bg-primary"></span>
+                            Data Analyst
+                        </span>
+                        <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.04] border border-white/10 text-slate-200 text-xs font-medium">
+                            <span class="relative flex size-2">
+                                <span class="absolute inline-flex size-full rounded-full bg-[#0ca30c] opacity-60 animate-ping"></span>
+                                <span class="relative inline-flex size-2 rounded-full bg-[#0ca30c]"></span>
+                            </span>
+                            Available for roles &amp; projects
+                        </span>
                     </div>
-                    <div>
-                        <h1 class="text-5xl lg:text-[3.75rem] font-black leading-[1.08] tracking-tight">
-                            <span class="gradient-text">Turning Data</span><br>
-                            <span class="text-white">into Decisions</span>
-                        </h1>
-                    </div>
-                    <p class="text-slate-400 text-lg leading-relaxed max-w-lg">
-                        Data Analyst focused on practical insights and business decisions — transforming complex datasets into strategies that drive real results.
+                    <h1 class="hero-in text-[2.6rem] sm:text-6xl lg:text-[4.4rem] font-black leading-[1.06] tracking-tight text-white" style="--d: 80ms">
+                        I turn <span class="text-slate-400 underline decoration-wavy decoration-slate-500/70 decoration-2 underline-offset-[10px]">messy data</span> into
+                        <span class="relative inline-block text-primary">decisions<svg class="absolute left-0 -bottom-2 w-full h-3" viewBox="0 0 200 12" preserveAspectRatio="none" aria-hidden="true"><path class="hero-underline" pathLength="1" d="M3 8 C 50 2, 120 2, 197 6" fill="none" stroke="#e8a424" stroke-width="4" stroke-linecap="round"/></svg></span>
+                        people can act on.
+                    </h1>
+                    <p class="hero-in text-slate-300 text-lg leading-relaxed max-w-xl" style="--d: 160ms">
+                        I'm <span class="text-white font-semibold">Esther Odulana</span>. I take raw, disconnected datasets, clean and model them, and build dashboards that answer the questions a business actually cares about.
                     </p>
-                    <div class="flex flex-wrap gap-3">
-                        <a href="#portfolio" class="flex items-center justify-center h-12 px-6 rounded-xl bg-primary hover:bg-primary-dark text-white text-sm font-semibold transition-all hover:shadow-xl hover:shadow-primary/20">
-                            View My Work
+                    <div class="hero-in flex flex-wrap gap-3" style="--d: 240ms">
+                        <a href="#work" class="group flex items-center gap-2 h-12 px-6 rounded-xl bg-primary hover:bg-primary-dark text-background-dark text-sm font-bold transition-all hover:shadow-xl hover:shadow-primary/20">
+                            See My Work
+                            <span class="material-symbols-outlined text-lg leading-none transition-transform group-hover:translate-y-0.5">arrow_downward</span>
                         </a>
-                        <a href="contact.html" class="flex items-center justify-center h-12 px-6 rounded-xl border border-white/10 hover:border-white/20 bg-white/[0.04] text-white text-sm font-semibold transition-all hover:bg-white/[0.08]">
+                        <a href="contact.html" class="flex items-center h-12 px-6 rounded-xl border border-white/10 hover:border-white/25 bg-white/[0.04] hover:bg-white/[0.08] text-white text-sm font-semibold transition-all">
                             Get In Touch
                         </a>
                     </div>
-                    <div class="flex flex-wrap gap-2 pt-1">
-                        <span class="px-3 py-1 rounded-full bg-surface-2-dark border border-white/[0.08] text-slate-400 text-xs font-medium">Excel</span>
-                        <span class="px-3 py-1 rounded-full bg-surface-2-dark border border-white/[0.08] text-slate-400 text-xs font-medium">SQL</span>
-                        <span class="px-3 py-1 rounded-full bg-surface-2-dark border border-white/[0.08] text-slate-400 text-xs font-medium">Power BI</span>
-                        <span class="px-3 py-1 rounded-full bg-surface-2-dark border border-white/[0.08] text-slate-400 text-xs font-medium">DAX</span>
-                        <span class="px-3 py-1 rounded-full bg-surface-2-dark border border-white/[0.08] text-slate-400 text-xs font-medium">Power Query</span>
+                    <div class="hero-in flex items-center gap-5 pt-2" style="--d: 320ms">
+                        <a href="https://www.linkedin.com/in/esther-odulana-081316253/" class="text-slate-400 hover:text-primary transition-colors" aria-label="LinkedIn">
+                            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.750-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
+                        </a>
+                        <a href="https://github.com/estherodulana" class="text-slate-400 hover:text-primary transition-colors" aria-label="GitHub">
+                            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.165 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.650 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.942.359.308.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.578.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" fill-rule="evenodd"></path></svg>
+                        </a>
+                        <span class="h-4 w-px bg-white/10"></span>
+                        <a href="mailto:estherodulana@gmail.com" class="text-slate-400 hover:text-primary text-sm font-medium transition-colors break-all">estherodulana@gmail.com</a>
                     </div>
                 </div>
-                <div class="relative flex justify-center lg:justify-end">
-                    <div class="relative">
-                        <div class="absolute inset-[-20px] rounded-3xl bg-gradient-to-br from-primary/20 to-violet-500/15 blur-3xl"></div>
-                        <img src="images/estherodulana.jpeg" alt="Esther Odulana"
-                             class="relative w-72 lg:w-80 rounded-2xl object-cover shadow-2xl ring-1 ring-white/10">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Skills Section -->
-    <section class="py-20 border-t border-white/[0.05]" id="skills">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="mb-12">
-                <h2 class="text-2xl font-bold text-white mb-2">Core Competencies</h2>
-                <p class="text-slate-500">Skills and tools I use to turn raw data into meaningful business insights.</p>
-            </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                <div class="card-hover flex flex-col gap-4 p-6 rounded-xl bg-surface-dark border border-white/[0.06] hover:border-primary/25">
-                    <div class="flex items-center justify-center size-10 rounded-lg bg-primary/10 text-primary">
-                        <span class="material-symbols-outlined text-xl">table_chart</span>
-                    </div>
-                    <div>
-                        <h3 class="text-white font-semibold mb-1.5">Excel-Based Analysis</h3>
-                        <p class="text-slate-500 text-sm leading-relaxed">Formulas, pivot tables, Power Pivot, DAX, and table relationships to analyze data and generate meaningful insights.</p>
-                    </div>
-                </div>
-                <div class="card-hover flex flex-col gap-4 p-6 rounded-xl bg-surface-dark border border-white/[0.06] hover:border-primary/25">
-                    <div class="flex items-center justify-center size-10 rounded-lg bg-primary/10 text-primary">
-                        <span class="material-symbols-outlined text-xl">database</span>
-                    </div>
-                    <div>
-                        <h3 class="text-white font-semibold mb-1.5">Data Cleaning & Preparation</h3>
-                        <p class="text-slate-500 text-sm leading-relaxed">Transforming raw, inconsistent datasets into structured, analysis-ready data using Excel and SQL.</p>
-                    </div>
-                </div>
-                <div class="card-hover flex flex-col gap-4 p-6 rounded-xl bg-surface-dark border border-white/[0.06] hover:border-primary/25">
-                    <div class="flex items-center justify-center size-10 rounded-lg bg-primary/10 text-primary">
-                        <span class="material-symbols-outlined text-xl">bar_chart</span>
-                    </div>
-                    <div>
-                        <h3 class="text-white font-semibold mb-1.5">Exploratory Data Analysis</h3>
-                        <p class="text-slate-500 text-sm leading-relaxed">Identifying patterns, trends, and anomalies to answer business questions and guide decisions.</p>
-                    </div>
-                </div>
-                <div class="card-hover flex flex-col gap-4 p-6 rounded-xl bg-surface-dark border border-white/[0.06] hover:border-primary/25">
-                    <div class="flex items-center justify-center size-10 rounded-lg bg-primary/10 text-primary">
-                        <span class="material-symbols-outlined text-xl">code</span>
-                    </div>
-                    <div>
-                        <h3 class="text-white font-semibold mb-1.5">SQL Querying & Extraction</h3>
-                        <p class="text-slate-500 text-sm leading-relaxed">Writing clear and efficient queries to filter, join, and aggregate data from relational databases.</p>
-                    </div>
-                </div>
-                <div class="card-hover flex flex-col gap-4 p-6 rounded-xl bg-surface-dark border border-white/[0.06] hover:border-primary/25">
-                    <div class="flex items-center justify-center size-10 rounded-lg bg-primary/10 text-primary">
-                        <span class="material-symbols-outlined text-xl">dashboard</span>
-                    </div>
-                    <div>
-                        <h3 class="text-white font-semibold mb-1.5">Power BI Visualization</h3>
-                        <p class="text-slate-500 text-sm leading-relaxed">Creating clear dashboards and reports that communicate insights effectively to non-technical audiences.</p>
-                    </div>
-                </div>
-                <div class="card-hover flex flex-col gap-4 p-6 rounded-xl bg-gradient-to-br from-primary/[0.08] to-violet-500/[0.08] border border-primary/20 hover:border-primary/40">
-                    <div class="flex items-center justify-center size-10 rounded-lg bg-primary/15 text-primary">
-                        <span class="material-symbols-outlined text-xl">insights</span>
-                    </div>
-                    <div>
-                        <h3 class="text-white font-semibold mb-1.5">Business Intelligence</h3>
-                        <p class="text-slate-400 text-sm leading-relaxed">Translating business questions into analytical frameworks that drive strategic, data-backed decisions.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+                <!-- Portrait, framed like a plotted chart -->
+                <div class="hero-in lg:col-span-5 flex justify-center lg:justify-end" style="--d: 200ms">
+                    <figure class="relative w-full max-w-[23rem] pl-8 pb-8">
+                        <!-- y-axis -->
+                        <div class="absolute left-2 top-0 bottom-8 w-px bg-white/20" aria-hidden="true"></div>
+                        <div class="axis-ticks-y absolute left-0 top-0 bottom-8 w-2" aria-hidden="true"></div>
+                        <!-- x-axis -->
+                        <div class="absolute left-8 right-0 bottom-2 h-px bg-white/20" aria-hidden="true"></div>
+                        <div class="axis-ticks-x absolute left-8 right-0 bottom-0 h-2" aria-hidden="true"></div>
+                        <!-- origin point -->
+                        <div class="absolute left-[5px] bottom-[5px] size-[7px] rounded-full bg-primary ring-2 ring-background-dark" aria-hidden="true"></div>
 
-    <!-- Portfolio Section -->
-    <section class="py-20 bg-surface-dark border-t border-white/[0.05]" id="portfolio">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="mb-12">
-                <h2 class="text-2xl font-bold text-white mb-2">Project Portfolio</h2>
-                <p class="text-slate-500">A selection of data analysis projects showcasing real-world problem solving.</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <!-- Project Card 1 -->
-                <div class="card-hover group flex flex-col rounded-xl bg-background-dark border border-white/[0.06] overflow-hidden hover:border-primary/25">
-                    <div class="relative overflow-hidden" style="aspect-ratio: 16/9;">
-                        <div class="img-zoom w-full h-full bg-cover bg-center"
-                             style="background-image: url('images/Rad.png')"></div>
-                        <div class="absolute inset-0 bg-gradient-to-t from-background-dark/70 via-transparent to-transparent"></div>
-                    </div>
-                    <div class="flex flex-col gap-3 p-6 flex-1">
-                        <h3 class="text-white text-lg font-bold">Road Accident Analysis</h3>
-                        <p class="text-slate-500 text-sm leading-relaxed flex-1">Comprehensive road accident data analysis and visualization dashboard to identify safety patterns and risks across 2021–2022.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <a href="https://github.com/estherodulana/road-accident" class="text-xs font-semibold text-primary bg-primary/10 px-2.5 py-1 rounded-full hover:bg-primary/20 transition-colors">GitHub ↗</a>
-                            <span class="text-xs font-medium text-slate-500 bg-white/[0.05] px-2.5 py-1 rounded-full">Excel</span>
-                            <span class="text-xs font-medium text-slate-500 bg-white/[0.05] px-2.5 py-1 rounded-full">DAX</span>
-                            <span class="text-xs font-medium text-slate-500 bg-white/[0.05] px-2.5 py-1 rounded-full">Power Query</span>
+                        <div class="relative">
+                            <div class="absolute inset-0 translate-x-3 -translate-y-3 rounded-[1.75rem] border border-primary/50" aria-hidden="true"></div>
+                            <div class="relative overflow-hidden rounded-[1.75rem] ring-1 ring-white/10 shadow-2xl shadow-black/60">
+                                <img src="images/estherodulana.jpeg" alt="Portrait of Esther Odulana"
+                                     class="w-full aspect-[4/5] object-cover">
+                                <div class="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-background-dark/95 via-background-dark/40 to-transparent"></div>
+                                <figcaption class="absolute inset-x-0 bottom-0 p-5 flex items-end justify-between gap-3">
+                                    <span>
+                                        <span class="block text-white font-bold text-lg leading-tight">Esther Odulana</span>
+                                        <span class="block text-slate-300 text-sm">Data Analyst</span>
+                                    </span>
+                                    <span class="flex items-center justify-center size-10 rounded-xl bg-primary text-background-dark shrink-0" aria-hidden="true">
+                                        <span class="material-symbols-outlined">monitoring</span>
+                                    </span>
+                                </figcaption>
+                            </div>
                         </div>
-                        <a href="road-accident-analysis.html" class="mt-2 flex w-full items-center justify-center h-10 rounded-lg border border-white/[0.08] hover:border-primary/40 hover:bg-primary/[0.06] text-white text-sm font-semibold transition-all">
-                            View Case Study →
-                        </a>
-                    </div>
-                </div>
-                <!-- Project Card 2 -->
-                <div class="card-hover group flex flex-col rounded-xl bg-background-dark border border-white/[0.06] overflow-hidden hover:border-primary/25">
-                    <div class="relative overflow-hidden" style="aspect-ratio: 16/9;">
-                        <div class="img-zoom w-full h-full bg-cover bg-center"
-                             style="background-image: url('images/dashboard.png')"></div>
-                        <div class="absolute inset-0 bg-gradient-to-t from-background-dark/70 via-transparent to-transparent"></div>
-                    </div>
-                    <div class="flex flex-col gap-3 p-6 flex-1">
-                        <h3 class="text-white text-lg font-bold">Electronic Sales Analysis</h3>
-                        <p class="text-slate-500 text-sm leading-relaxed flex-1">An interactive dashboard visualizing key sales metrics for Terry Gerry Electronics to identify growth opportunities across regions.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <a href="https://github.com/estherodulana/electronics-sales-analysis2/" class="text-xs font-semibold text-primary bg-primary/10 px-2.5 py-1 rounded-full hover:bg-primary/20 transition-colors">GitHub ↗</a>
-                            <span class="text-xs font-medium text-slate-500 bg-white/[0.05] px-2.5 py-1 rounded-full">Excel</span>
-                            <span class="text-xs font-medium text-slate-500 bg-white/[0.05] px-2.5 py-1 rounded-full">Power Query</span>
-                            <span class="text-xs font-medium text-slate-500 bg-white/[0.05] px-2.5 py-1 rounded-full">DAX</span>
-                        </div>
-                        <a href="electronic-sales.html" class="mt-2 flex w-full items-center justify-center h-10 rounded-lg border border-white/[0.08] hover:border-primary/40 hover:bg-primary/[0.06] text-white text-sm font-semibold transition-all">
-                            View Case Study →
-                        </a>
-                    </div>
+                    </figure>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact CTA Section -->
-    <section class="py-20 border-t border-white/[0.05]" id="contact">
+    <!-- Toolkit strip -->
+    <section class="border-y border-white/[0.06] bg-surface-dark/60">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-8">
+            <p class="text-slate-400 text-xs font-semibold uppercase tracking-[0.18em] shrink-0">My toolkit</p>
+            <div class="flex flex-wrap gap-x-8 gap-y-3">
+                <span class="flex items-center gap-2 text-slate-200 text-sm font-semibold"><span class="material-symbols-outlined text-primary text-xl">table_chart</span>Excel</span>
+                <span class="flex items-center gap-2 text-slate-200 text-sm font-semibold"><span class="material-symbols-outlined text-primary text-xl">database</span>SQL</span>
+                <span class="flex items-center gap-2 text-slate-200 text-sm font-semibold"><span class="material-symbols-outlined text-primary text-xl">dashboard</span>Power BI</span>
+                <span class="flex items-center gap-2 text-slate-200 text-sm font-semibold"><span class="material-symbols-outlined text-primary text-xl">function</span>DAX</span>
+                <span class="flex items-center gap-2 text-slate-200 text-sm font-semibold"><span class="material-symbols-outlined text-primary text-xl">transform</span>Power Query</span>
+                <span class="flex items-center gap-2 text-slate-200 text-sm font-semibold"><span class="material-symbols-outlined text-primary text-xl">hub</span>Power Pivot</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Selected Work -->
+    <section class="py-24 lg:py-32 scroll-mt-16" id="work">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="relative overflow-hidden rounded-2xl bg-surface-dark border border-white/[0.06] p-10 md:p-16 text-center">
-                <div class="absolute top-0 left-1/2 -translate-x-1/2 w-80 h-40 bg-primary/10 blur-[60px] pointer-events-none"></div>
-                <div class="relative">
-                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Let's Connect</h2>
-                    <p class="text-slate-400 max-w-lg mx-auto mb-8 leading-relaxed">
-                        I'm always interested in conversations around data, analytics, and problem-solving. Open to new opportunities and collaborations.
-                    </p>
-                    <div class="flex flex-wrap gap-4 justify-center">
-                        <a href="https://www.linkedin.com/in/esther-odulana-081316253/" class="flex items-center gap-2 h-11 px-5 rounded-xl bg-primary hover:bg-primary-dark text-white text-sm font-semibold transition-all hover:shadow-lg hover:shadow-primary/20">
-                            <svg class="h-4 w-4 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
-                            LinkedIn
+            <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-14 reveal">
+                <div>
+                    <p class="text-primary text-xs font-bold uppercase tracking-[0.18em] mb-3">Selected work</p>
+                    <h2 class="text-3xl md:text-4xl font-black text-white tracking-tight">Case studies</h2>
+                </div>
+                <p class="text-slate-400 max-w-md">Each project starts with a real business question and ends with a dashboard someone can use to make a decision.</p>
+            </div>
+
+            <div class="flex flex-col gap-10">
+                <!-- Project 1 -->
+                <article class="group grid grid-cols-1 lg:grid-cols-12 rounded-3xl bg-surface-dark border border-white/[0.06] hover:border-primary/25 overflow-hidden transition-colors reveal">
+                    <a href="electronic-sales.html" class="lg:col-span-7 relative overflow-hidden bg-surface-2-dark p-4 sm:p-6 lg:p-8 flex items-center">
+                        <img src="images/dashboard.png" alt="Terry Gerry electronic sales dashboard"
+                             class="img-zoom w-full h-auto rounded-xl shadow-2xl ring-1 ring-white/10">
+                    </a>
+                    <div class="lg:col-span-5 flex flex-col gap-6 p-7 sm:p-9">
+                        <div class="flex items-center gap-3 text-xs font-semibold">
+                            <span class="text-primary">01</span>
+                            <span class="h-px w-8 bg-white/15"></span>
+                            <span class="text-slate-400 uppercase tracking-wider">Retail · Sales</span>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-white mb-3">Electronic Sales Analysis</h3>
+                            <p class="text-slate-300 leading-relaxed">Terry Gerry's product, sales and store data sat in separate files with no revenue figures. I built a star-schema model in Power Pivot so management could finally see what was selling, and where.</p>
+                        </div>
+                        <dl class="grid grid-cols-3 gap-4 py-5 border-y border-white/[0.06]">
+                            <div><dt class="text-slate-400 text-xs mb-1">Revenue</dt><dd class="text-white text-xl font-black">$55.7M</dd></div>
+                            <div><dt class="text-slate-400 text-xs mb-1">Orders</dt><dd class="text-white text-xl font-black">26,326</dd></div>
+                            <div><dt class="text-slate-400 text-xs mb-1">Top market</dt><dd class="text-white text-xl font-black">US</dd></div>
+                        </dl>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs font-medium text-slate-300 bg-white/[0.05] px-2.5 py-1 rounded-full">Excel</span>
+                            <span class="text-xs font-medium text-slate-300 bg-white/[0.05] px-2.5 py-1 rounded-full">Power Pivot</span>
+                            <span class="text-xs font-medium text-slate-300 bg-white/[0.05] px-2.5 py-1 rounded-full">DAX</span>
+                            <span class="text-xs font-medium text-slate-300 bg-white/[0.05] px-2.5 py-1 rounded-full">Power Query</span>
+                        </div>
+                        <div class="flex flex-wrap gap-3 mt-auto">
+                            <a href="electronic-sales.html" class="flex items-center gap-2 h-11 px-5 rounded-xl bg-primary hover:bg-primary-dark text-background-dark text-sm font-bold transition-colors">
+                                Read Case Study
+                                <span class="material-symbols-outlined text-lg leading-none">arrow_forward</span>
+                            </a>
+                            <a href="https://github.com/estherodulana/electronics-sales-analysis2/" class="flex items-center h-11 px-5 rounded-xl border border-white/10 hover:border-white/25 text-white text-sm font-semibold transition-colors">
+                                GitHub ↗
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 2 -->
+                <article class="group grid grid-cols-1 lg:grid-cols-12 rounded-3xl bg-surface-dark border border-white/[0.06] hover:border-primary/25 overflow-hidden transition-colors reveal">
+                    <a href="road-accident-analysis.html" class="lg:col-span-7 lg:order-2 relative overflow-hidden bg-surface-2-dark p-4 sm:p-6 lg:p-8 flex items-center">
+                        <img src="images/Rad.png" alt="Road accident analysis dashboard, 2021 to 2022"
+                             class="img-zoom w-full h-auto rounded-xl shadow-2xl ring-1 ring-white/10">
+                    </a>
+                    <div class="lg:col-span-5 lg:order-1 flex flex-col gap-6 p-7 sm:p-9">
+                        <div class="flex items-center gap-3 text-xs font-semibold">
+                            <span class="text-primary">02</span>
+                            <span class="h-px w-8 bg-white/15"></span>
+                            <span class="text-slate-400 uppercase tracking-wider">Public safety</span>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-white mb-3">Road Accident Analysis</h3>
+                            <p class="text-slate-300 leading-relaxed">307,972 accident records from 2021–2022, broken down by severity, vehicle type, road surface and light conditions, to show where casualties concentrate and when the risk peaks.</p>
+                        </div>
+                        <dl class="grid grid-cols-3 gap-4 py-5 border-y border-white/[0.06]">
+                            <div><dt class="text-slate-400 text-xs mb-1">Casualties</dt><dd class="text-white text-xl font-black">417,882</dd></div>
+                            <div><dt class="text-slate-400 text-xs mb-1">Serious + fatal</dt><dd class="text-white text-xl font-black">15.9%</dd></div>
+                            <div><dt class="text-slate-400 text-xs mb-1">Peak month</dt><dd class="text-white text-xl font-black">Nov</dd></div>
+                        </dl>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs font-medium text-slate-300 bg-white/[0.05] px-2.5 py-1 rounded-full">Excel</span>
+                            <span class="text-xs font-medium text-slate-300 bg-white/[0.05] px-2.5 py-1 rounded-full">DAX</span>
+                            <span class="text-xs font-medium text-slate-300 bg-white/[0.05] px-2.5 py-1 rounded-full">Power Query</span>
+                        </div>
+                        <div class="flex flex-wrap gap-3 mt-auto">
+                            <a href="road-accident-analysis.html" class="flex items-center gap-2 h-11 px-5 rounded-xl bg-primary hover:bg-primary-dark text-background-dark text-sm font-bold transition-colors">
+                                Read Case Study
+                                <span class="material-symbols-outlined text-lg leading-none">arrow_forward</span>
+                            </a>
+                            <a href="https://github.com/estherodulana/road-accident" class="flex items-center h-11 px-5 rounded-xl border border-white/10 hover:border-white/25 text-white text-sm font-semibold transition-colors">
+                                GitHub ↗
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- From the data: interactive chart -->
+    <section class="pb-24 lg:pb-32 scroll-mt-16" id="data">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10 reveal">
+                <div>
+                    <p class="text-primary text-xs font-bold uppercase tracking-[0.18em] mb-3">From the data</p>
+                    <h2 class="text-3xl md:text-4xl font-black text-white tracking-tight">Road casualties fell 11.9% in 2022</h2>
+                </div>
+                <p class="text-slate-400 max-w-md">Monthly casualties from the 307,972 accidents behind the road-safety case study. Hover, tap or use the arrow keys to read each month.</p>
+            </div>
+
+            <div class="rounded-3xl bg-surface-dark border border-white/[0.06] p-5 sm:p-8 reveal">
+                <!-- Stat tiles -->
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-4 pb-7 mb-7 border-b border-white/[0.06]">
+                    <div>
+                        <p class="text-slate-400 text-sm mb-1">Total casualties, 2021–2022</p>
+                        <p class="text-white text-3xl font-black tracking-tight">417,882</p>
+                    </div>
+                    <div>
+                        <p class="text-slate-400 text-sm mb-1">Change in 2022</p>
+                        <p class="text-white text-3xl font-black tracking-tight">−26,408</p>
+                        <p class="flex items-center gap-1 text-[#0ca30c] text-sm font-semibold mt-1">
+                            <span class="material-symbols-outlined text-base leading-none" aria-hidden="true">arrow_downward</span>
+                            11.9% fewer than 2021
+                        </p>
+                    </div>
+                    <div>
+                        <p class="text-slate-400 text-sm mb-1">Peak month</p>
+                        <p class="text-white text-3xl font-black tracking-tight">November</p>
+                        <p class="text-slate-400 text-sm mt-1">in both years</p>
+                    </div>
+                </div>
+
+                <!-- Legend -->
+                <div class="flex items-center gap-6 mb-4 text-sm text-slate-300" id="casualty-legend"></div>
+
+                <!-- Chart -->
+                <div class="relative" id="casualty-chart">
+                    <div id="casualty-tooltip" class="pointer-events-none absolute z-10 hidden min-w-[9rem] rounded-xl bg-background-dark border border-white/10 px-3.5 py-3 shadow-2xl text-sm" role="status" aria-live="polite"></div>
+                </div>
+
+                <!-- Table view -->
+                <details class="mt-6 group/table">
+                    <summary class="inline-flex items-center gap-1.5 cursor-pointer select-none text-slate-300 hover:text-white text-sm font-semibold list-none">
+                        <span class="material-symbols-outlined text-lg leading-none transition-transform group-open/table:rotate-90">chevron_right</span>
+                        View as table
+                    </summary>
+                    <div class="mt-4 overflow-x-auto">
+                        <table class="w-full text-sm [font-variant-numeric:tabular-nums]" id="casualty-table">
+                            <thead>
+                                <tr class="text-slate-400 text-left border-b border-white/[0.08]">
+                                    <th class="py-2 pr-4 font-medium">Month</th>
+                                    <th class="py-2 pr-4 font-medium text-right">2021</th>
+                                    <th class="py-2 pr-4 font-medium text-right">2022</th>
+                                    <th class="py-2 font-medium text-right">Change</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-slate-200"></tbody>
+                        </table>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- Approach -->
+    <section class="py-24 lg:py-32 bg-surface-dark border-y border-white/[0.06] scroll-mt-16" id="approach">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-2xl mb-14 reveal">
+                <p class="text-primary text-xs font-bold uppercase tracking-[0.18em] mb-3">How I work</p>
+                <h2 class="text-3xl md:text-4xl font-black text-white tracking-tight mb-4">From raw files to a clear answer</h2>
+                <p class="text-slate-400 text-lg leading-relaxed">The same four steps sit behind every project, whatever the tool.</p>
+            </div>
+            <ol class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <li class="flex flex-col gap-4 p-6 rounded-2xl bg-background-dark border border-white/[0.06] reveal">
+                    <div class="flex items-center justify-between">
+                        <span class="flex items-center justify-center size-11 rounded-xl bg-primary/10 text-primary"><span class="material-symbols-outlined">help</span></span>
+                        <span class="text-white/10 text-4xl font-black">01</span>
+                    </div>
+                    <h3 class="text-white font-bold text-lg">Ask</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Pin down the business question and the KPIs that answer it, before touching the data.</p>
+                </li>
+                <li class="flex flex-col gap-4 p-6 rounded-2xl bg-background-dark border border-white/[0.06] reveal">
+                    <div class="flex items-center justify-between">
+                        <span class="flex items-center justify-center size-11 rounded-xl bg-primary/10 text-primary"><span class="material-symbols-outlined">cleaning_services</span></span>
+                        <span class="text-white/10 text-4xl font-black">02</span>
+                    </div>
+                    <h3 class="text-white font-bold text-lg">Clean</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Import, fix and reshape messy CSVs and reports with Power Query and SQL.</p>
+                </li>
+                <li class="flex flex-col gap-4 p-6 rounded-2xl bg-background-dark border border-white/[0.06] reveal">
+                    <div class="flex items-center justify-between">
+                        <span class="flex items-center justify-center size-11 rounded-xl bg-primary/10 text-primary"><span class="material-symbols-outlined">hub</span></span>
+                        <span class="text-white/10 text-4xl font-black">03</span>
+                    </div>
+                    <h3 class="text-white font-bold text-lg">Model</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Link tables into a star schema and write DAX measures for revenue, orders and trends.</p>
+                </li>
+                <li class="flex flex-col gap-4 p-6 rounded-2xl bg-background-dark border border-white/[0.06] reveal">
+                    <div class="flex items-center justify-between">
+                        <span class="flex items-center justify-center size-11 rounded-xl bg-primary/10 text-primary"><span class="material-symbols-outlined">insights</span></span>
+                        <span class="text-white/10 text-4xl font-black">04</span>
+                    </div>
+                    <h3 class="text-white font-bold text-lg">Communicate</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Build dashboards with slicers and drill-downs that a non-technical audience can read at a glance.</p>
+                </li>
+            </ol>
+        </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section class="py-24 lg:py-32" id="contact">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="relative overflow-hidden rounded-3xl border border-primary/20 bg-gradient-to-br from-primary/[0.10] via-surface-dark to-violet-500/[0.08] p-8 sm:p-12 lg:p-16 reveal">
+                <div class="absolute -top-24 -right-24 w-80 h-80 bg-primary/15 rounded-full blur-[90px] pointer-events-none"></div>
+                <div class="relative grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+                    <div>
+                        <h2 class="text-3xl md:text-5xl font-black text-white tracking-tight leading-tight mb-4">Have data that needs answers?</h2>
+                        <p class="text-slate-300 text-lg leading-relaxed max-w-md">I'm open to analyst roles, freelance projects and collaborations. Reach me directly — I usually reply within 24–48 hours.</p>
+                    </div>
+                    <div class="flex flex-col gap-3">
+                        <a href="mailto:estherodulana@gmail.com" class="group flex items-center gap-4 p-4 rounded-2xl bg-background-dark/70 border border-white/[0.08] hover:border-primary/40 transition-colors">
+                            <span class="flex items-center justify-center size-12 rounded-xl bg-primary text-background-dark shrink-0"><span class="material-symbols-outlined">mail</span></span>
+                            <span class="min-w-0">
+                                <span class="block text-slate-400 text-xs mb-0.5">Email</span>
+                                <span class="block text-white font-semibold break-all group-hover:text-primary transition-colors">estherodulana@gmail.com</span>
+                            </span>
                         </a>
-                        <a href="https://github.com/estherodulana" class="flex items-center gap-2 h-11 px-5 rounded-xl border border-white/10 hover:border-white/20 bg-white/[0.04] text-white text-sm font-semibold transition-all hover:bg-white/[0.08]">
-                            <svg class="h-4 w-4 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.165 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.942.359.308.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.578.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" fill-rule="evenodd"></path></svg>
-                            GitHub
+                        <a href="tel:+2348164532905" class="group flex items-center gap-4 p-4 rounded-2xl bg-background-dark/70 border border-white/[0.08] hover:border-primary/40 transition-colors">
+                            <span class="flex items-center justify-center size-12 rounded-xl bg-primary/15 text-primary shrink-0"><span class="material-symbols-outlined">call</span></span>
+                            <span>
+                                <span class="block text-slate-400 text-xs mb-0.5">Phone</span>
+                                <span class="block text-white font-semibold group-hover:text-primary transition-colors">+234 816 453 2905</span>
+                            </span>
                         </a>
-                        <a href="contact.html" class="flex items-center gap-2 h-11 px-5 rounded-xl border border-white/10 hover:border-white/20 bg-white/[0.04] text-white text-sm font-semibold transition-all hover:bg-white/[0.08]">
-                            <span class="material-symbols-outlined text-lg leading-none">mail</span>
-                            Send a Message
+                        <a href="https://www.linkedin.com/in/esther-odulana-081316253/" class="group flex items-center gap-4 p-4 rounded-2xl bg-background-dark/70 border border-white/[0.08] hover:border-primary/40 transition-colors">
+                            <span class="flex items-center justify-center size-12 rounded-xl bg-primary/15 text-primary shrink-0">
+                                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
+                            </span>
+                            <span>
+                                <span class="block text-slate-400 text-xs mb-0.5">LinkedIn</span>
+                                <span class="block text-white font-semibold group-hover:text-primary transition-colors">Esther Odulana</span>
+                            </span>
                         </a>
                     </div>
                 </div>
@@ -289,26 +469,247 @@
 </main>
 
 <!-- Footer -->
-<footer class="border-t border-white/[0.05] py-8">
+<footer class="border-t border-white/[0.06] py-8">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
             <div class="flex items-center gap-2.5">
-                <div class="size-5 text-primary">
-                    <svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                        <path clip-rule="evenodd" d="M24 18.4228L42 11.475V34.3663C42 34.7796 41.7457 35.1504 41.3601 35.2992L24 42V18.4228Z" fill="currentColor" fill-rule="evenodd"></path>
-                        <path clip-rule="evenodd" d="M24 8.18819L33.4123 11.574L24 15.2071L14.5877 11.574L24 8.18819ZM9 15.8487L21 20.4805V37.6263L9 32.9945V15.8487ZM27 37.6263V20.4805L39 15.8487V32.9945L27 37.6263ZM25.354 2.29885C24.4788 1.98402 23.5212 1.98402 22.646 2.29885L4.98454 8.65208C3.7939 9.08038 3 10.2097 3 11.475V34.3663C3 36.0196 4.01719 37.5026 5.55962 38.098L22.9197 44.7987C23.6149 45.0671 24.3851 45.0671 25.0803 44.7987L42.4404 38.098C43.9828 37.5026 45 36.0196 45 34.3663V11.475C45 10.2097 44.2061 9.08038 43.0155 8.65208L25.354 2.29885Z" fill="currentColor" fill-rule="evenodd"></path>
-                    </svg>
-                </div>
-                <span class="text-slate-500 text-sm">Esther Odulana — Data Analyst</span>
+                <div class="flex items-center justify-center size-6 rounded-md bg-primary text-background-dark text-[10px] font-black tracking-tight shrink-0">EO</div>
+                <span class="text-slate-400 text-sm">Esther Odulana — Data Analyst</span>
             </div>
             <div class="flex items-center gap-6">
-                <a href="https://www.linkedin.com/in/esther-odulana-081316253/" class="text-slate-500 hover:text-primary text-sm transition-colors">LinkedIn</a>
-                <a href="https://github.com/estherodulana" class="text-slate-500 hover:text-primary text-sm transition-colors">GitHub</a>
+                <a href="https://www.linkedin.com/in/esther-odulana-081316253/" class="text-slate-400 hover:text-primary text-sm transition-colors">LinkedIn</a>
+                <a href="https://github.com/estherodulana" class="text-slate-400 hover:text-primary text-sm transition-colors">GitHub</a>
+                <a href="mailto:estherodulana@gmail.com" class="text-slate-400 hover:text-primary text-sm transition-colors">Email</a>
             </div>
-            <p class="text-slate-600 text-sm">© 2025 All rights reserved.</p>
+            <p class="text-slate-500 text-sm">© <span id="year">2026</span> Esther Odulana</p>
         </div>
     </div>
 </footer>
+
+<script>
+    (function () {
+        // Mobile menu
+        const toggle = document.getElementById('menu-toggle');
+        const menu = document.getElementById('mobile-menu');
+        const icon = toggle.querySelector('.material-symbols-outlined');
+        const setOpen = open => {
+            menu.classList.toggle('hidden', !open);
+            toggle.setAttribute('aria-expanded', String(open));
+            toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+            icon.textContent = open ? 'close' : 'menu';
+        };
+        toggle.addEventListener('click', () => setOpen(menu.classList.contains('hidden')));
+        menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setOpen(false)));
+
+        // Reveal on scroll
+        const items = document.querySelectorAll('.reveal');
+        if ('IntersectionObserver' in window) {
+            const io = new IntersectionObserver(entries => {
+                entries.forEach(e => {
+                    if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); }
+                });
+            }, { threshold: 0.12 });
+            items.forEach(el => io.observe(el));
+        } else {
+            items.forEach(el => el.classList.add('is-visible'));
+        }
+
+        document.getElementById('year').textContent = new Date().getFullYear();
+    })();
+</script>
+
+<script>
+    // Monthly road casualties, summed from the 307,972 rows of "Road Accident Data.xlsx".
+    (function () {
+        const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+        const MONTHS_LONG = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+        const SERIES = [
+            { name: '2021', color: '#3987e5', values: [18172, 14648, 17815, 17335, 18852, 18728, 19682, 18797, 18456, 20109, 20975, 18576] },
+            { name: '2022', color: '#c98500', values: [13163, 14804, 16575, 15767, 16775, 17230, 17201, 16796, 17500, 18287, 18439, 13200] },
+        ];
+        const Y_MIN = 12000, Y_MAX = 22000, Y_STEP = 2000;
+        const INK = { muted: '#94a3b8', grid: '#1c1c33', axis: '#2a2a45', surface: '#0d0d1c', primary: '#ffffff' };
+        const fmt = n => n.toLocaleString('en-US');
+        const NS = 'http://www.w3.org/2000/svg';
+
+        const wrap = document.getElementById('casualty-chart');
+        const tip = document.getElementById('casualty-tooltip');
+        const legend = document.getElementById('casualty-legend');
+        const tbody = document.querySelector('#casualty-table tbody');
+
+        const el = (tag, attrs, parent) => {
+            const n = document.createElementNS(NS, tag);
+            for (const k in attrs) n.setAttribute(k, attrs[k]);
+            if (parent) parent.appendChild(n);
+            return n;
+        };
+
+        // Legend: a short line key beside each series name
+        SERIES.forEach(s => {
+            const item = document.createElement('span');
+            item.className = 'flex items-center gap-2';
+            const key = document.createElement('span');
+            key.className = 'inline-block w-4 h-0.5 rounded-full';
+            key.style.background = s.color;
+            item.appendChild(key);
+            item.appendChild(document.createTextNode(s.name));
+            legend.appendChild(item);
+        });
+
+        // Table view
+        MONTHS_LONG.forEach((m, i) => {
+            const a = SERIES[0].values[i], b = SERIES[1].values[i];
+            const pct = ((b - a) / a * 100).toFixed(1);
+            const tr = document.createElement('tr');
+            tr.className = 'border-b border-white/[0.04]';
+            [m, fmt(a), fmt(b), (pct > 0 ? '+' : '') + pct + '%'].forEach((v, j) => {
+                const td = document.createElement('td');
+                td.className = 'py-2 ' + (j === 0 ? 'pr-4 text-slate-300' : j === 3 ? 'text-right text-slate-400' : 'pr-4 text-right');
+                td.textContent = v.replace('-', '−');
+                tr.appendChild(td);
+            });
+            tbody.appendChild(tr);
+        });
+
+        let svg, state = null, active = null;
+
+        function render() {
+            const W = wrap.clientWidth;
+            if (!W) return;
+            const narrow = W < 560;
+            const H = narrow ? 260 : 340;
+            const m = { t: 12, r: narrow ? 64 : 84, b: 30, l: narrow ? 46 : 56 };
+            const iw = W - m.l - m.r, ih = H - m.t - m.b;
+            const x = i => m.l + (iw * i) / (MONTHS.length - 1);
+            const y = v => m.t + ih - ((v - Y_MIN) / (Y_MAX - Y_MIN)) * ih;
+
+            if (svg) svg.remove();
+            svg = el('svg', {
+                width: W, height: H, viewBox: `0 0 ${W} ${H}`, tabindex: '0', role: 'img',
+                'aria-label': 'Line chart of monthly road casualties in 2021 and 2022. Casualties were lower in 2022 in every month except February, and peaked in November in both years.',
+                class: 'block outline-none focus-visible:ring-2 focus-visible:ring-primary/50 rounded-lg',
+                style: 'font-family: Inter, sans-serif; touch-action: pan-y;'
+            });
+            wrap.insertBefore(svg, tip);
+
+            // Gridlines + y ticks
+            for (let v = Y_MIN; v <= Y_MAX; v += Y_STEP) {
+                el('line', { x1: m.l, x2: W - m.r, y1: y(v), y2: y(v), stroke: v === Y_MIN ? INK.axis : INK.grid, 'stroke-width': 1 }, svg);
+                const t = el('text', { x: m.l - 10, y: y(v) + 4, 'text-anchor': 'end', fill: INK.muted, 'font-size': 11, style: 'font-variant-numeric: tabular-nums' }, svg);
+                t.textContent = narrow ? (v / 1000) + 'k' : fmt(v);
+            }
+            // X labels
+            MONTHS.forEach((mo, i) => {
+                if (narrow && i % 2) return;
+                const t = el('text', { x: x(i), y: H - 8, 'text-anchor': 'middle', fill: INK.muted, 'font-size': 11 }, svg);
+                t.textContent = mo;
+            });
+
+            // Crosshair (under the lines)
+            const cross = el('line', { y1: m.t, y2: m.t + ih, stroke: '#ffffff', 'stroke-opacity': 0.25, 'stroke-width': 1, visibility: 'hidden' }, svg);
+
+            // Lines, end dots, direct end labels
+            SERIES.forEach(s => {
+                const d = s.values.map((v, i) => (i ? 'L' : 'M') + x(i).toFixed(1) + ' ' + y(v).toFixed(1)).join(' ');
+                el('path', { d, fill: 'none', stroke: s.color, 'stroke-width': 2, 'stroke-linejoin': 'round', 'stroke-linecap': 'round' }, svg);
+                const last = s.values.length - 1;
+                el('circle', { cx: x(last), cy: y(s.values[last]), r: 4, fill: s.color, stroke: INK.surface, 'stroke-width': 2 }, svg);
+                const lbl = el('text', { x: x(last) + 10, y: y(s.values[last]) - 2, fill: INK.primary, 'font-size': 12, 'font-weight': 700 }, svg);
+                lbl.textContent = s.name;
+                const val = el('text', { x: x(last) + 10, y: y(s.values[last]) + 12, fill: INK.muted, 'font-size': 11 }, svg);
+                val.textContent = fmt(s.values[last]);
+            });
+
+            // Hover dots (on top)
+            const hoverDots = SERIES.map(s => el('circle', { r: 4.5, fill: s.color, stroke: INK.surface, 'stroke-width': 2, visibility: 'hidden' }, svg));
+
+            // Hit area covering the whole plot
+            const hit = el('rect', { x: m.l - 8, y: m.t, width: iw + 16, height: ih, fill: 'transparent', style: 'cursor: crosshair' }, svg);
+
+            state = { x, y, m, iw, W, cross, hoverDots };
+
+            const fromPointer = e => {
+                const r = svg.getBoundingClientRect();
+                const px = e.clientX - r.left;
+                return Math.max(0, Math.min(MONTHS.length - 1, Math.round(((px - m.l) / iw) * (MONTHS.length - 1))));
+            };
+            hit.addEventListener('pointermove', e => show(fromPointer(e)));
+            hit.addEventListener('pointerdown', e => show(fromPointer(e)));
+            hit.addEventListener('pointerleave', () => { if (document.activeElement !== svg) hide(); });
+            svg.addEventListener('focus', () => show(active ?? 10));
+            svg.addEventListener('blur', hide);
+            svg.addEventListener('keydown', e => {
+                if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+                    e.preventDefault();
+                    const step = e.key === 'ArrowRight' ? 1 : -1;
+                    show(Math.max(0, Math.min(MONTHS.length - 1, (active ?? 10) + step)));
+                } else if (e.key === 'Escape') { svg.blur(); }
+            });
+
+            if (active !== null) show(active);
+        }
+
+        function show(i) {
+            if (!state) return;
+            active = i;
+            const { x, y, cross, hoverDots, W } = state;
+            const cx = x(i);
+            cross.setAttribute('x1', cx); cross.setAttribute('x2', cx);
+            cross.setAttribute('visibility', 'visible');
+            SERIES.forEach((s, k) => {
+                hoverDots[k].setAttribute('cx', cx);
+                hoverDots[k].setAttribute('cy', y(s.values[i]));
+                hoverDots[k].setAttribute('visibility', 'visible');
+            });
+
+            // Tooltip: values lead, series names follow
+            tip.replaceChildren();
+            const head = document.createElement('p');
+            head.className = 'text-slate-400 text-xs font-medium mb-2';
+            head.textContent = MONTHS_LONG[i];
+            tip.appendChild(head);
+            SERIES.forEach(s => {
+                const row = document.createElement('div');
+                row.className = 'flex items-center gap-2 py-0.5';
+                const key = document.createElement('span');
+                key.className = 'inline-block w-3 h-0.5 rounded-full shrink-0';
+                key.style.background = s.color;
+                const v = document.createElement('span');
+                v.className = 'text-white font-bold';
+                v.textContent = fmt(s.values[i]);
+                const n = document.createElement('span');
+                n.className = 'text-slate-400 text-xs';
+                n.textContent = s.name;
+                row.append(key, v, n);
+                tip.appendChild(row);
+            });
+            const a = SERIES[0].values[i], b = SERIES[1].values[i];
+            const diff = document.createElement('p');
+            diff.className = 'text-slate-400 text-xs mt-2 pt-2 border-t border-white/10';
+            const pct = ((b - a) / a * 100).toFixed(1);
+            diff.textContent = (pct > 0 ? '+' : '−') + Math.abs(pct) + '% in 2022';
+            tip.appendChild(diff);
+
+            tip.classList.remove('hidden');
+            const tw = tip.offsetWidth;
+            const left = Math.max(0, cx > W / 2 ? cx - 14 - tw : cx + 14);
+            tip.style.left = left + 'px';
+            tip.style.top = '8px';
+        }
+
+        function hide() {
+            if (!state) return;
+            active = null;
+            state.cross.setAttribute('visibility', 'hidden');
+            state.hoverDots.forEach(d => d.setAttribute('visibility', 'hidden'));
+            tip.classList.add('hidden');
+        }
+
+        render();
+        let raf;
+        new ResizeObserver(() => { cancelAnimationFrame(raf); raf = requestAnimationFrame(render); }).observe(wrap);
+    })();
+</script>
 
 </body>
 </html>
