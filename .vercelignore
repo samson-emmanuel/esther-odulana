@@ -1,0 +1,4 @@
+# Source data and local editor settings stay in GitHub but are not served by the site
+*.xlsx
+.claude/
+.vscode/
